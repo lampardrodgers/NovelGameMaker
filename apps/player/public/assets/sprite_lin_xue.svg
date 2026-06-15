@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="720" viewBox="0 0 512 720">
+  <title>林雪</title>
+  <defs>
+    <linearGradient id="coat" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e7eef4"/>
+      <stop offset="1" stop-color="#64748b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="720" fill="none"/>
+  <ellipse cx="256" cy="684" rx="154" ry="28" fill="#000000" opacity="0.28"/>
+  <path d="M142 334 C154 252 198 214 256 214 C314 214 358 252 370 334 L408 650 L104 650 Z" fill="url(#coat)" stroke="#f8fbff" stroke-width="5"/>
+  <path d="M174 372 L256 650 L338 372" fill="#1f2937" opacity="0.32"/>
+  <path d="M210 394 H302" stroke="#6db7d8" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="256" cy="170" r="84" fill="#e0c1ae" stroke="#fff2e8" stroke-width="5"/>
+  <path d="M146 178 C148 92 210 48 282 56 C348 64 394 116 378 204 C336 160 260 142 146 178 Z" fill="#232232"/>
+  <path d="M172 132 C178 238 146 302 118 388" fill="none" stroke="#232232" stroke-width="34" stroke-linecap="round"/>
+  <path d="M334 132 C338 244 370 304 398 390" fill="none" stroke="#232232" stroke-width="34" stroke-linecap="round"/>
+  <ellipse cx="224" cy="174" rx="9" ry="12" fill="#1b2532"/>
+  <ellipse cx="290" cy="174" rx="9" ry="12" fill="#1b2532"/>
+  <path d="M230 216 C246 228 272 228 288 216" fill="none" stroke="#8b5e53" stroke-width="5" stroke-linecap="round"/>
+  <path d="M154 348 C124 442 122 552 148 644" fill="none" stroke="#f8fbff" stroke-width="8" opacity="0.56"/>
+  <path d="M358 348 C388 442 390 552 364 644" fill="none" stroke="#f8fbff" stroke-width="8" opacity="0.56"/>
+</svg>

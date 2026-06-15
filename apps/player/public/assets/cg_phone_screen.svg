@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <title>手机屏幕亮起</title>
+  
+      <defs>
+        <radialGradient id="phoneGlow" cx="50%" cy="46%" r="50%">
+          <stop offset="0" stop-color="#9deaff" stop-opacity="0.95"/>
+          <stop offset="0.45" stop-color="#2b7ea6" stop-opacity="0.54"/>
+          <stop offset="1" stop-color="#050812" stop-opacity="1"/>
+        </radialGradient>
+      </defs>
+      <rect width="1280" height="720" fill="#050812"/>
+      <rect width="1280" height="720" fill="url(#phoneGlow)"/>
+      <path d="M0 660 C260 560 410 600 604 520 C764 452 930 486 1280 390 V720 H0 Z" fill="#080b13" opacity="0.78"/>
+      <g transform="translate(520 112) rotate(-7)">
+        <rect x="0" y="0" width="260" height="470" rx="34" fill="#10141b" stroke="#d5f7ff" stroke-width="8"/>
+        <rect x="28" y="54" width="204" height="340" rx="18" fill="#bdf5ff"/>
+        <rect x="52" y="94" width="156" height="24" rx="12" fill="#3177a1" opacity="0.72"/>
+        <rect x="52" y="150" width="126" height="18" rx="9" fill="#3177a1" opacity="0.46"/>
+        <rect x="52" y="194" width="168" height="18" rx="9" fill="#3177a1" opacity="0.46"/>
+        <rect x="52" y="238" width="104" height="18" rx="9" fill="#3177a1" opacity="0.46"/>
+        <circle cx="130" cy="426" r="16" fill="#e8fcff"/>
+      </g>
+      <path d="M354 602 C430 484 520 486 604 562 C514 554 438 586 392 650 Z" fill="#d5b8a8" opacity="0.9"/>
+      <path d="M786 570 C890 474 982 474 1076 596 C968 570 900 584 826 660 Z" fill="#caa796" opacity="0.78"/>
+      <g stroke="#9deaff" stroke-width="4" opacity="0.35">
+        <path d="M306 116 L470 260"/>
+        <path d="M842 132 L760 300"/>
+        <path d="M306 390 L486 352"/>
+        <path d="M870 422 L766 366"/>
+      </g>
+    
+</svg>

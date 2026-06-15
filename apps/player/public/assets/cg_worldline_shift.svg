@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <title>世界线偏移</title>
+  
+      <defs>
+        <linearGradient id="shift" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#12102c"/>
+          <stop offset="0.5" stop-color="#234f6c"/>
+          <stop offset="1" stop-color="#781d52"/>
+        </linearGradient>
+        <radialGradient id="core" cx="50%" cy="48%" r="42%">
+          <stop offset="0" stop-color="#eaffff" stop-opacity="0.9"/>
+          <stop offset="0.28" stop-color="#7ef2ff" stop-opacity="0.45"/>
+          <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1280" height="720" fill="url(#shift)"/>
+      <rect width="1280" height="720" fill="url(#core)"/>
+      <g fill="none" stroke="#b7f8ff" opacity="0.58">
+        <ellipse cx="640" cy="360" rx="440" ry="120" stroke-width="5"/>
+        <ellipse cx="640" cy="360" rx="340" ry="230" stroke-width="4" transform="rotate(28 640 360)"/>
+        <ellipse cx="640" cy="360" rx="360" ry="220" stroke-width="4" transform="rotate(-31 640 360)"/>
+      </g>
+      <g opacity="0.82">
+        <path d="M0 566 C154 458 272 496 400 424 C520 356 598 392 706 298 C838 182 976 228 1280 116" fill="none" stroke="#ffe7a7" stroke-width="8"/>
+        <path d="M0 608 C194 512 280 534 432 470 C556 418 688 434 820 362 C940 296 1044 294 1280 258" fill="none" stroke="#9cf4ff" stroke-width="5" opacity="0.75"/>
+      </g>
+      <g fill="#080b18" opacity="0.8">
+        <rect x="94" y="436" width="116" height="190"/>
+        <rect x="256" y="380" width="166" height="246"/>
+        <rect x="824" y="400" width="136" height="226"/>
+        <rect x="1000" y="342" width="198" height="284"/>
+      </g>
+      <circle cx="640" cy="360" r="62" fill="#eaffff" opacity="0.9"/>
+      <circle cx="640" cy="360" r="18" fill="#11203a"/>
+    
+</svg>

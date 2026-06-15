@@ -1,0 +1,53 @@
+{
+  "name": "agentic-galgame-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm build:packages && pnpm assets:studio && pnpm --filter @agentic-galgame/studio dev",
+    "dev:player": "pnpm build:packages && pnpm assets:player && pnpm --filter @agentic-galgame/player dev",
+    "dev:api": "pnpm build:packages && pnpm --filter @agentic-galgame/api dev",
+    "dev:worker": "pnpm build:packages && pnpm --filter @agentic-galgame/api dev:worker",
+    "worker:api": "pnpm build:packages && pnpm --filter @agentic-galgame/api build && pnpm --filter @agentic-galgame/api worker",
+    "db:migrate": "pnpm build:packages && pnpm --filter @agentic-galgame/api migrate",
+    "db:migrate:dist": "pnpm build:packages && pnpm --filter @agentic-galgame/api build && pnpm --filter @agentic-galgame/api migrate:dist",
+    "docker:build:api": "docker build -f Dockerfile.api -t agentic-galgame-api:local .",
+    "docker:build:studio": "docker build -f Dockerfile.studio --build-arg VITE_API_BASE_URL=http://127.0.0.1:8787 -t agentic-galgame-studio:local .",
+    "docker:build:player": "docker build -f Dockerfile.player -t agentic-galgame-player:local .",
+    "build:packages": "pnpm -r --filter './packages/*' --if-present build",
+    "test": "pnpm build:packages && pnpm -r --if-present test",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "build": "pnpm assets:studio && pnpm assets:player && pnpm -r --if-present build",
+    "export:sample": "tsx scripts/export-sample.ts",
+    "assets:studio": "tsx scripts/sync-studio-assets.ts",
+    "assets:player": "tsx scripts/sync-player-sample.ts",
+    "image2:manifest": "tsx scripts/create-image2-manifest.ts",
+    "audit:mvp": "tsx scripts/audit-mvp.ts",
+    "audit:production": "tsx scripts/audit-production.ts",
+    "verify:mvp": "pnpm test && pnpm typecheck && pnpm build && pnpm export:sample && pnpm image2:manifest && pnpm audit:mvp",
+    "verify:production": "pnpm test && pnpm typecheck && pnpm build && pnpm audit:production"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^20.17.10",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^29.1.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@agentic-galgame/vn-agent": "workspace:*",
+    "@agentic-galgame/vn-core": "workspace:*",
+    "@agentic-galgame/vn-exporter": "workspace:*",
+    "@agentic-galgame/vn-runtime": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <title>黄昏天台</title>
+  
+      <defs>
+        <linearGradient id="sunset" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#6f7db8"/>
+          <stop offset="0.52" stop-color="#f0a15f"/>
+          <stop offset="1" stop-color="#3e415f"/>
+        </linearGradient>
+      </defs>
+      <rect width="1280" height="720" fill="url(#sunset)"/>
+      <circle cx="1010" cy="180" r="92" fill="#ffd38a" opacity="0.82"/>
+      <g fill="#2a3048" opacity="0.86">
+        <rect x="42" y="388" width="122" height="202"/>
+        <rect x="190" y="342" width="172" height="248"/>
+        <rect x="400" y="380" width="136" height="210"/>
+        <rect x="578" y="320" width="210" height="270"/>
+        <rect x="840" y="366" width="150" height="224"/>
+        <rect x="1028" y="330" width="194" height="260"/>
+      </g>
+      <rect x="0" y="516" width="1280" height="204" fill="#272a37"/>
+      <rect x="0" y="468" width="1280" height="18" fill="#3d4051"/>
+      <g stroke="#232631" stroke-width="8">
+        <path d="M0 470 H1280"/>
+        <path d="M80 470 V600"/>
+        <path d="M230 470 V600"/>
+        <path d="M380 470 V600"/>
+        <path d="M530 470 V600"/>
+        <path d="M680 470 V600"/>
+        <path d="M830 470 V600"/>
+        <path d="M980 470 V600"/>
+        <path d="M1130 470 V600"/>
+      </g>
+      <path d="M92 620 C270 574 508 578 690 632 C832 674 1008 674 1194 612" fill="none" stroke="#4a4f63" stroke-width="6" opacity="0.55"/>
+    
+</svg>

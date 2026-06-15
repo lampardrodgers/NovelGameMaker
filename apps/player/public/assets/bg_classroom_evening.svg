@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <title>傍晚教室</title>
+  
+      <defs>
+        <linearGradient id="room" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#343447"/>
+          <stop offset="1" stop-color="#8a5f47"/>
+        </linearGradient>
+        <linearGradient id="window" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#f8c887"/>
+          <stop offset="1" stop-color="#855f79"/>
+        </linearGradient>
+      </defs>
+      <rect width="1280" height="720" fill="url(#room)"/>
+      <rect x="92" y="86" width="500" height="270" fill="#202a29" stroke="#806d5f" stroke-width="8"/>
+      <rect x="700" y="78" width="364" height="292" fill="url(#window)" stroke="#e2b77f" stroke-width="8"/>
+      <path d="M882 82 V370 M704 224 H1062" stroke="#f2d29b" stroke-width="8"/>
+      <rect x="0" y="452" width="1280" height="268" fill="#3a302b"/>
+      <g fill="#5c4034" stroke="#8c6858" stroke-width="4">
+        <rect x="120" y="498" width="220" height="64" rx="6"/>
+        <rect x="452" y="498" width="220" height="64" rx="6"/>
+        <rect x="784" y="498" width="220" height="64" rx="6"/>
+        <rect x="286" y="604" width="220" height="64" rx="6"/>
+        <rect x="618" y="604" width="220" height="64" rx="6"/>
+        <rect x="950" y="604" width="220" height="64" rx="6"/>
+      </g>
+      <g stroke="#372821" stroke-width="8">
+        <path d="M168 562 V688 M292 562 V688 M500 562 V704 M624 562 V704 M832 562 V704 M956 562 V704"/>
+      </g>
+    
+</svg>

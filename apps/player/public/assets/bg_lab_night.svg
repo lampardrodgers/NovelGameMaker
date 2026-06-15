@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <title>夜晚实验室</title>
+  
+      <defs>
+        <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="#07111f"/>
+          <stop offset="1" stop-color="#172c3f"/>
+        </linearGradient>
+        <radialGradient id="monitorGlow" cx="44%" cy="44%" r="42%">
+          <stop offset="0" stop-color="#7dd8ff" stop-opacity="0.75"/>
+          <stop offset="1" stop-color="#7dd8ff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1280" height="720" fill="url(#sky)"/>
+      <rect x="0" y="430" width="1280" height="290" fill="#11161d"/>
+      <rect x="70" y="64" width="1080" height="374" fill="#0b1624" stroke="#38506a" stroke-width="4"/>
+      <g opacity="0.88">
+        <rect x="104" y="92" width="160" height="278" fill="#101f2d" stroke="#446680" stroke-width="3"/>
+        <rect x="292" y="92" width="160" height="278" fill="#101f2d" stroke="#446680" stroke-width="3"/>
+        <rect x="480" y="92" width="160" height="278" fill="#101f2d" stroke="#446680" stroke-width="3"/>
+        <rect x="668" y="92" width="160" height="278" fill="#101f2d" stroke="#446680" stroke-width="3"/>
+        <rect x="856" y="92" width="160" height="278" fill="#101f2d" stroke="#446680" stroke-width="3"/>
+      </g>
+      <rect width="1280" height="720" fill="url(#monitorGlow)"/>
+      <g>
+        <rect x="168" y="408" width="936" height="94" rx="8" fill="#232833"/>
+        <rect x="214" y="294" width="270" height="158" rx="10" fill="#08131f" stroke="#8fe7ff" stroke-width="3"/>
+        <rect x="236" y="318" width="226" height="104" fill="#12334a"/>
+        <path d="M250 394 C302 350 340 422 394 354 C416 330 438 336 456 350" fill="none" stroke="#9be9ff" stroke-width="5" opacity="0.78"/>
+        <rect x="544" y="316" width="148" height="126" rx="8" fill="#1a2633" stroke="#6a7f94" stroke-width="3"/>
+        <rect x="730" y="332" width="212" height="106" rx="8" fill="#101b25" stroke="#4d667d" stroke-width="3"/>
+        <circle cx="1014" cy="456" r="28" fill="#7bdcff" opacity="0.75"/>
+      </g>
+      <g opacity="0.95">
+        <rect x="96" y="500" width="1090" height="20" fill="#3b4652"/>
+        <rect x="140" y="520" width="28" height="154" fill="#202832"/>
+        <rect x="1088" y="520" width="28" height="154" fill="#202832"/>
+        <rect x="330" y="540" width="280" height="74" fill="#161d27" stroke="#465461" stroke-width="2"/>
+        <rect x="760" y="540" width="220" height="74" fill="#161d27" stroke="#465461" stroke-width="2"/>
+      </g>
+    
+</svg>

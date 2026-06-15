@@ -1,0 +1,362 @@
+{
+  "id": "vn_实验室里的蓝光",
+  "title": "实验室里的蓝光",
+  "version": "0.1.0",
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "16:9"
+  },
+  "ui": {
+    "maxLines": 2,
+    "maxCjkCharsPerLine": 30,
+    "maxCjkCharsPerBeat": 60,
+    "quoteStyle": "jp_corner",
+    "showNameplate": true,
+    "narrationShowNameplate": false,
+    "typewriter": false,
+    "dialogueBrackets": [
+      "「",
+      "」"
+    ]
+  },
+  "assets": {
+    "items": [
+      {
+        "id": "bg_lab_night",
+        "type": "background",
+        "name": "夜晚实验室",
+        "src": "assets/bg_lab_night.svg",
+        "placeholder": true
+      },
+      {
+        "id": "bg_rooftop_sunset",
+        "type": "background",
+        "name": "黄昏天台",
+        "src": "assets/bg_rooftop_sunset.svg",
+        "placeholder": true
+      },
+      {
+        "id": "bg_classroom_evening",
+        "type": "background",
+        "name": "傍晚教室",
+        "src": "assets/bg_classroom_evening.svg",
+        "placeholder": true
+      },
+      {
+        "id": "bg_default",
+        "type": "background",
+        "name": "默认背景",
+        "src": "assets/bg_default.svg",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_lin_xue",
+        "type": "characterSprite",
+        "name": "林雪立绘",
+        "src": "assets/sprite_lin_xue.svg",
+        "characterId": "lin_xue",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_protagonist",
+        "type": "characterSprite",
+        "name": "我立绘",
+        "src": "assets/sprite_protagonist.svg",
+        "characterId": "protagonist",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_unknown",
+        "type": "characterSprite",
+        "name": "未知说话人立绘",
+        "src": "assets/sprite_unknown.svg",
+        "characterId": "unknown_speaker",
+        "placeholder": true
+      },
+      {
+        "id": "cg_phone_screen",
+        "type": "cg",
+        "name": "手机屏幕亮起",
+        "src": "assets/cg_phone_screen.svg",
+        "placeholder": true
+      },
+      {
+        "id": "cg_worldline_shift",
+        "type": "cg",
+        "name": "世界线偏移",
+        "src": "assets/cg_worldline_shift.svg",
+        "placeholder": true
+      },
+      {
+        "id": "cg_default",
+        "type": "cg",
+        "name": "关键 CG",
+        "src": "assets/cg_default.svg",
+        "placeholder": true
+      }
+    ]
+  },
+  "characters": [
+    {
+      "id": "lin_xue",
+      "name": "林雪",
+      "aliases": [
+        "林雪",
+        "她"
+      ],
+      "role": "heroine",
+      "visualKeywords": [
+        "实验室",
+        "旧手机",
+        "冷静",
+        "恐惧"
+      ],
+      "defaultSpriteId": "sprite_lin_xue",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "protagonist",
+      "name": "我",
+      "aliases": [
+        "我"
+      ],
+      "role": "protagonist",
+      "visualKeywords": [
+        "第一人称",
+        "主角"
+      ],
+      "defaultSpriteId": "sprite_protagonist",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "unknown_speaker",
+      "name": "未知说话人",
+      "aliases": [
+        "未知说话人",
+        "未知角色"
+      ],
+      "role": "unknown",
+      "visualKeywords": [
+        "未知说话人"
+      ],
+      "defaultSpriteId": "sprite_unknown",
+      "defaultExpression": "neutral"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "chapter_1",
+      "title": "第一章 实验室里的蓝光",
+      "scenes": [
+        {
+          "id": "chapter_1_scene_1",
+          "title": "实验室",
+          "shots": [
+            {
+              "id": "chapter_1_scene_1_shot_1",
+              "title": "实验室",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "characters": [
+                  {
+                    "characterId": "lin_xue",
+                    "spriteId": "sprite_lin_xue",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ],
+                "backgroundId": "bg_lab_night"
+              },
+              "beats": [
+                {
+                  "id": "chapter_1_scene_1_beat_1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "实验室里只剩下显示器的蓝光。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_lab_night",
+                    "characters": [
+                      {
+                        "characterId": "lin_xue",
+                        "spriteId": "sprite_lin_xue",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "chapter_1_scene_1_beat_2"
+                },
+                {
+                  "id": "chapter_1_scene_1_beat_2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "林雪站在桌边，手里紧紧攥着那部旧手机。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "cg",
+                    "cgAssetId": "cg_phone_screen"
+                  },
+                  "tags": [
+                    "cg-candidate"
+                  ],
+                  "meta": {
+                    "cgCandidateScore": 0.92,
+                    "cgCandidateReason": "手机屏幕亮起是关键物品特写"
+                  },
+                  "nextBeatId": "chapter_1_scene_1_beat_3"
+                },
+                {
+                  "id": "chapter_1_scene_1_beat_3",
+                  "line": {
+                    "kind": "dialogue",
+                    "text": "你听见了吗？",
+                    "speakerId": "lin_xue",
+                    "speakerName": "林雪"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "chapter_1_scene_1_beat_4"
+                },
+                {
+                  "id": "chapter_1_scene_1_beat_4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "我没有回答。"
+                  },
+                  "nextBeatId": "chapter_1_scene_1_beat_5"
+                },
+                {
+                  "id": "chapter_1_scene_1_beat_5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "手机屏幕忽然亮了起来。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "cg",
+                    "cgAssetId": "cg_phone_screen"
+                  },
+                  "tags": [
+                    "cg-candidate"
+                  ],
+                  "meta": {
+                    "cgCandidateScore": 0.92,
+                    "cgCandidateReason": "手机屏幕亮起是关键物品特写"
+                  },
+                  "nextBeatId": "chapter_1_scene_2_beat_1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter_1_scene_2",
+          "title": "Scene 2",
+          "shots": [
+            {
+              "id": "chapter_1_scene_2_shot_1",
+              "title": "Scene 2",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "characters": [
+                  {
+                    "characterId": "lin_xue",
+                    "spriteId": "sprite_lin_xue",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ],
+                "backgroundId": "bg_default"
+              },
+              "beats": [
+                {
+                  "id": "chapter_1_scene_2_beat_1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "她抬起头，眼神里第一次出现了恐惧。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_default",
+                    "characters": [
+                      {
+                        "characterId": "lin_xue",
+                        "spriteId": "sprite_lin_xue",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "chapter_1_scene_2_beat_2"
+                },
+                {
+                  "id": "chapter_1_scene_2_beat_2",
+                  "line": {
+                    "kind": "dialogue",
+                    "text": "如果这条消息是真的，我们昨天做的一切，都已经被改写了。",
+                    "speakerId": "lin_xue",
+                    "speakerName": "林雪"
+                  },
+                  "nextBeatId": "chapter_1_scene_2_beat_3"
+                },
+                {
+                  "id": "chapter_1_scene_2_beat_3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "窗外传来电车经过的声音。"
+                  },
+                  "nextBeatId": "chapter_1_scene_2_beat_4"
+                },
+                {
+                  "id": "chapter_1_scene_2_beat_4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "那一刻，我终于意识到，世界线已经偏移。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "cg",
+                    "cgAssetId": "cg_worldline_shift"
+                  },
+                  "tags": [
+                    "cg-candidate"
+                  ],
+                  "meta": {
+                    "cgCandidateScore": 0.95,
+                    "cgCandidateReason": "世界线或真相揭露是重点剧情节点"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "source": "local-heuristic-agent"
+  },
+  "createdAt": "2026-06-08T01:00:53.668Z",
+  "updatedAt": "2026-06-08T01:00:53.668Z",
+  "startBeatId": "chapter_1_scene_1_beat_1"
+}

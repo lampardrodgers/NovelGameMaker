@@ -1,0 +1,28 @@
+{
+  "name": "@agentic-galgame/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "dev:worker": "tsx src/worker.ts",
+    "migrate": "tsx src/migrate.ts",
+    "migrate:dist": "node dist/migrate.js",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "worker": "node dist/worker.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@agentic-galgame/vn-agent": "workspace:*",
+    "@agentic-galgame/vn-core": "workspace:*",
+    "@agentic-galgame/vn-platform": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

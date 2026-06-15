@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #03050a;
+  color: #f8fbff;
+  font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+button {
+  min-width: 60px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 4px;
+  background: rgba(9, 13, 24, 0.66);
+  color: #f8fbff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 140ms ease, background-color 140ms ease, opacity 140ms ease;
+}
+
+button:hover {
+  border-color: rgba(155, 211, 255, 0.72);
+  background: rgba(35, 51, 84, 0.9);
+}
+
+.player-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #03050a;
+}
+
+.player-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.player-runtime {
+  width: 100%;
+  height: 100%;
+}
+
+.player-controls {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 10;
+  display: flex;
+  max-width: calc(100% - 32px);
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(2, 5, 12, 0.58);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+  opacity: 0.78;
+  transition: opacity 140ms ease, background-color 140ms ease;
+}
+
+.player-controls:hover,
+.player-controls:focus-within {
+  background: rgba(2, 5, 12, 0.78);
+  opacity: 1;
+}
+
+.player-counter {
+  min-width: 64px;
+  color: #cbd6e6;
+  font-size: 13px;
+  line-height: 1;
+  text-align: center;
+}
+
+.player-state {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  background: #03050a;
+  color: #f8fbff;
+  font-size: 18px;
+}
+
+.player-state-error {
+  padding: 24px;
+  color: #ffc7c7;
+  text-align: center;
+}
+
+.player-toast {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 12;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(2, 5, 12, 0.76);
+  color: #dce7f7;
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .player-controls {
+    right: 8px;
+    top: 8px;
+    max-width: calc(100% - 16px);
+    gap: 6px;
+    padding: 6px;
+  }
+
+  button {
+    min-width: 48px;
+    height: 32px;
+    padding: 0 7px;
+    font-size: 11px;
+  }
+}
