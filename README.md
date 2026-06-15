@@ -91,6 +91,14 @@ samples/steins-like-lab/
 
 它包含实验室背景、林雪角色、多个 beat、对话、旁白和至少一个 CG beat，可用于验证完整播放链路。
 
+额外的中式民俗推理样例位于：
+
+```text
+samples/fog-name-village/
+```
+
+它包含线性化 `project.vn.json`、原始小说文本、可替换占位背景/立绘/证据图，以及 Key、证据、人物、流程节点等结构化源数据，适合验证更长剧情导入和后续分支系统设计。
+
 ## 生产化入口
 
 本地 MVP 不依赖生产 API。需要 API、worker、Postgres、对象存储、发布审批、账号、SSO、计费、Webhook、Docker 部署等能力时，优先阅读：

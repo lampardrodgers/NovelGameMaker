@@ -1,0 +1,3228 @@
+{
+  "id": "sample-fog-name-village",
+  "title": "雾名村：献名之宴",
+  "version": "0.1.0",
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "aspectRatio": "16:9"
+  },
+  "ui": {
+    "maxLines": 3,
+    "maxCjkCharsPerLine": 34,
+    "maxCjkCharsPerBeat": 68,
+    "quoteStyle": "cn_double",
+    "showNameplate": true,
+    "narrationShowNameplate": false,
+    "typewriter": false,
+    "dialogueBrackets": [
+      "?",
+      "?"
+    ]
+  },
+  "assets": {
+    "items": [
+      {
+        "id": "bg_village_fog",
+        "type": "background",
+        "name": "Fog Name Village entrance",
+        "src": "assets/backgrounds/bg_village_fog.jpg",
+        "placeholder": true,
+        "tags": [
+          "fog",
+          "village"
+        ]
+      },
+      {
+        "id": "bg_shrine_forest",
+        "type": "background",
+        "name": "Mountain shrine",
+        "src": "assets/backgrounds/bg_shrine_forest.jpg",
+        "placeholder": true,
+        "tags": [
+          "shrine",
+          "ritual"
+        ]
+      },
+      {
+        "id": "bg_forest_path",
+        "type": "background",
+        "name": "Misty forest path",
+        "src": "assets/backgrounds/bg_forest_path.jpg",
+        "placeholder": true,
+        "tags": [
+          "forest",
+          "night"
+        ]
+      },
+      {
+        "id": "bg_inn_room",
+        "type": "background",
+        "name": "Red Umbrella inn",
+        "src": "assets/backgrounds/bg_inn_room.jpg",
+        "placeholder": true,
+        "tags": [
+          "inn",
+          "archive"
+        ]
+      },
+      {
+        "id": "sprite_c01",
+        "type": "characterSprite",
+        "name": "陆见遥 sprite",
+        "src": "assets/characters/c01_lu_jianyao.png",
+        "characterId": "c01",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c02",
+        "type": "characterSprite",
+        "name": "红伞 sprite",
+        "src": "assets/characters/c02_red_umbrella.png",
+        "characterId": "c02",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c03",
+        "type": "characterSprite",
+        "name": "灰账房 sprite",
+        "src": "assets/characters/c03_grey_accountant.png",
+        "characterId": "c03",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c04",
+        "type": "characterSprite",
+        "name": "灯守 sprite",
+        "src": "assets/characters/c04_lamp_keeper.png",
+        "characterId": "c04",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c05",
+        "type": "characterSprite",
+        "name": "水壶护士 sprite",
+        "src": "assets/characters/c05_water_nurse.png",
+        "characterId": "c05",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c06",
+        "type": "characterSprite",
+        "name": "白绫教员 sprite",
+        "src": "assets/characters/c06_white_teacher.png",
+        "characterId": "c06",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c07",
+        "type": "characterSprite",
+        "name": "纸鸢女 sprite",
+        "src": "assets/characters/c07_paper_kite.png",
+        "characterId": "c07",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c08",
+        "type": "characterSprite",
+        "name": "磨刀学徒 sprite",
+        "src": "assets/characters/c08_knife_apprentice.png",
+        "characterId": "c08",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c10",
+        "type": "characterSprite",
+        "name": "白灯经理 sprite",
+        "src": "assets/characters/c10_white_lamp_manager.png",
+        "characterId": "c10",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c15",
+        "type": "characterSprite",
+        "name": "黑雨长老 sprite",
+        "src": "assets/characters/c15_black_rain_elder.png",
+        "characterId": "c15",
+        "placeholder": true
+      },
+      {
+        "id": "sprite_c16",
+        "type": "characterSprite",
+        "name": "白衣孩子 sprite",
+        "src": "assets/characters/c16_white_child.png",
+        "characterId": "c16",
+        "placeholder": true
+      },
+      {
+        "id": "cg_E01",
+        "type": "cg",
+        "name": "E01 evidence card",
+        "src": "assets/evidence/E01_register.jpg",
+        "placeholder": true
+      },
+      {
+        "id": "cg_E03",
+        "type": "cg",
+        "name": "E03 evidence card",
+        "src": "assets/evidence/E03_channel.jpg",
+        "placeholder": true
+      },
+      {
+        "id": "cg_E08",
+        "type": "cg",
+        "name": "E08 evidence card",
+        "src": "assets/evidence/E08_powder.jpg",
+        "placeholder": true
+      },
+      {
+        "id": "cg_E18",
+        "type": "cg",
+        "name": "E18 evidence card",
+        "src": "assets/evidence/E18_contract.jpg",
+        "placeholder": true
+      },
+      {
+        "id": "cg_E20",
+        "type": "cg",
+        "name": "E20 evidence card",
+        "src": "assets/evidence/E20_letter.jpg",
+        "placeholder": true
+      }
+    ]
+  },
+  "characters": [
+    {
+      "id": "c01",
+      "name": "陆见遥",
+      "aliases": [
+        "陆见遥"
+      ],
+      "role": "protagonist",
+      "description": "外来档案员，受委托整理雾名村失踪档案。",
+      "personality": "声称自己只是来工作，其实在寻找亲生母亲线索。",
+      "appearance": "主角 / 无名客",
+      "visualKeywords": [
+        "主角 / 无名客",
+        "玩家侧"
+      ],
+      "defaultSpriteId": "sprite_c01",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c02",
+      "name": "红伞",
+      "aliases": [
+        "红伞"
+      ],
+      "role": "supporting",
+      "description": "热情、体面、会保护外来者。",
+      "personality": "声称自己不认识无面尸。",
+      "appearance": "旅店女主人 / 同名者",
+      "visualKeywords": [
+        "旅店女主人 / 同名者",
+        "玩家侧"
+      ],
+      "defaultSpriteId": "sprite_c02",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c03",
+      "name": "灰账房",
+      "aliases": [
+        "灰账房"
+      ],
+      "role": "supporting",
+      "description": "谨慎、胆小、永远拿着账本。",
+      "personality": "声称账册只记粮食和药品。",
+      "appearance": "会计 / 山神代言人",
+      "visualKeywords": [
+        "会计 / 山神代言人",
+        "规则侧"
+      ],
+      "defaultSpriteId": "sprite_c03",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c04",
+      "name": "灯守",
+      "aliases": [
+        "灯守"
+      ],
+      "role": "supporting",
+      "description": "沉默、守规矩、像迷信的化身。",
+      "personality": "声称雾灯只能由神意点亮。",
+      "appearance": "雾灯看守 / 守灯人",
+      "visualKeywords": [
+        "雾灯看守 / 守灯人",
+        "村民侧"
+      ],
+      "defaultSpriteId": "sprite_c04",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c05",
+      "name": "水壶护士",
+      "aliases": [
+        "水壶护士"
+      ],
+      "role": "supporting",
+      "description": "每日送药送水，温柔到近乎自毁。",
+      "personality": "声称自己本来就该被献名。",
+      "appearance": "护理员 / 识名者候选",
+      "visualKeywords": [
+        "护理员 / 识名者候选",
+        "村民侧"
+      ],
+      "defaultSpriteId": "sprite_c05",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c06",
+      "name": "白绫教员",
+      "aliases": [
+        "白绫教员"
+      ],
+      "role": "supporting",
+      "description": "干净、克制、容易被怀疑为梦游凶手。",
+      "personality": "隐瞒自己确有夜行症。",
+      "appearance": "旧校舍教师 / 讣告人",
+      "visualKeywords": [
+        "旧校舍教师 / 讣告人",
+        "玩家侧"
+      ],
+      "defaultSpriteId": "sprite_c06",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c07",
+      "name": "纸鸢女",
+      "aliases": [
+        "纸鸢女"
+      ],
+      "role": "supporting",
+      "description": "做纸鸢和灯笼，像村中童话人物。",
+      "personality": "声称自己不记得那个孩子。",
+      "appearance": "手艺人 / 真结局证人",
+      "visualKeywords": [
+        "手艺人 / 真结局证人",
+        "玩家侧"
+      ],
+      "defaultSpriteId": "sprite_c07",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c08",
+      "name": "磨刀学徒",
+      "aliases": [
+        "磨刀学徒"
+      ],
+      "role": "supporting",
+      "description": "寡言、手上总有刀伤。",
+      "personality": "假装自己不会写字。",
+      "appearance": "铁匠铺学徒 / 可疑误导位",
+      "visualKeywords": [
+        "铁匠铺学徒 / 可疑误导位",
+        "村民侧"
+      ],
+      "defaultSpriteId": "sprite_c08",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c09",
+      "name": "旧琴匠",
+      "aliases": [
+        "旧琴匠"
+      ],
+      "role": "supporting",
+      "description": "喜欢在雾夜放旧录音。",
+      "personality": "声称雾中声音来自山谷回响。",
+      "appearance": "录音与乐器修理者 / 能力干扰者",
+      "visualKeywords": [
+        "录音与乐器修理者 / 能力干扰者",
+        "村民侧"
+      ],
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c10",
+      "name": "白灯经理",
+      "aliases": [
+        "白灯经理"
+      ],
+      "role": "antagonist",
+      "description": "礼貌、理性、反迷信。",
+      "personality": "声称公司只负责救援和药品。",
+      "appearance": "救援社驻村负责人 / 终局山犬",
+      "visualKeywords": [
+        "救援社驻村负责人 / 终局山犬",
+        "山犬侧"
+      ],
+      "defaultSpriteId": "sprite_c10",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c11",
+      "name": "巡夜人",
+      "aliases": [
+        "巡夜人"
+      ],
+      "role": "supporting",
+      "description": "强硬、讲规矩、讨厌外来者。",
+      "personality": "隐瞒自己曾试图救人但选错对象。",
+      "appearance": "村中巡逻者 / 山犬执行者",
+      "visualKeywords": [
+        "村中巡逻者 / 山犬执行者",
+        "山犬侧"
+      ],
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c12",
+      "name": "花牌客",
+      "aliases": [
+        "花牌客"
+      ],
+      "role": "supporting",
+      "description": "轻浮、懂人情、像喜剧角色。",
+      "personality": "声称合议投票全凭良心。",
+      "appearance": "酒馆赌客 / 投票操盘者",
+      "visualKeywords": [
+        "酒馆赌客 / 投票操盘者",
+        "村民侧"
+      ],
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c13",
+      "name": "火纹姐",
+      "aliases": [
+        "火纹姐"
+      ],
+      "role": "supporting",
+      "description": "脸侧有火纹胎记，性格直。",
+      "personality": "隐瞒出生记录被篡改过。",
+      "appearance": "澡堂经营者 / 同名者候选",
+      "visualKeywords": [
+        "澡堂经营者 / 同名者候选",
+        "村民侧"
+      ],
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c14",
+      "name": "火纹弟",
+      "aliases": [
+        "火纹弟"
+      ],
+      "role": "supporting",
+      "description": "第一周目前半像外来司机。",
+      "personality": "假装不认识火纹姐。",
+      "appearance": "白灯司机 / 可策反山犬",
+      "visualKeywords": [
+        "白灯司机 / 可策反山犬",
+        "山犬侧"
+      ],
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c15",
+      "name": "黑雨长老",
+      "aliases": [
+        "黑雨长老"
+      ],
+      "role": "antagonist",
+      "description": "守旧、庄严、像迷信源头。",
+      "personality": "声称献名从古已有之。",
+      "appearance": "献名规则主持人",
+      "visualKeywords": [
+        "献名规则主持人",
+        "规则侧"
+      ],
+      "defaultSpriteId": "sprite_c15",
+      "defaultExpression": "neutral"
+    },
+    {
+      "id": "c16",
+      "name": "白衣孩子",
+      "aliases": [
+        "白衣孩子"
+      ],
+      "role": "supporting",
+      "description": "雾中偶尔出现的孩子影子。",
+      "personality": "无。",
+      "appearance": "第一献名者 / 真结局门锁",
+      "visualKeywords": [
+        "第一献名者 / 真结局门锁",
+        "残响侧"
+      ],
+      "defaultSpriteId": "sprite_c16",
+      "defaultExpression": "neutral"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "chapter_01_prologue",
+      "title": "序章 雾灯入村",
+      "scenes": [
+        {
+          "id": "prologue_scene",
+          "title": "雾名村口与红伞旅店",
+          "shots": [
+            {
+              "id": "prologue_shot_1",
+              "title": "第一夜 / 山路",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_village_fog",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c02",
+                    "spriteId": "sprite_c02",
+                    "expression": "neutral",
+                    "position": "center",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c04",
+                    "spriteId": "sprite_c04",
+                    "expression": "neutral",
+                    "position": "right",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0001_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "陆见遥在最后一班县际客车上醒来时，司机已经把车灯关成了两团昏黄。山路被雾压得很低，路边的石碑只露出半截，刻着“"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_village_fog",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c02",
+                        "spriteId": "sprite_c02",
+                        "expression": "neutral",
+                        "position": "center",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c04",
+                        "spriteId": "sprite_c04",
+                        "expression": "neutral",
+                        "position": "right",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0002_prologue"
+                },
+                {
+                  "id": "beat_0002_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "雾名”两个字，下面像被刀刮过，原本应该有的村字不见了。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0003_prologue"
+                },
+                {
+                  "id": "beat_0003_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "旅店女主人红伞没有问他的来处，只把登记簿推过来，指尖停在姓名栏上方。她说村里最近办献名宴，外来人最好只写姓，真"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0004_prologue"
+                },
+                {
+                  "id": "beat_0004_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "名留在自己嘴里。她笑得得体，窗外却有三盏白灯同时亮起。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0005_prologue"
+                },
+                {
+                  "id": "beat_0005_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "灯守在街尾敲了三下铜铃，宣告夜禁。雾里传来像犬吠又像人咳的声音，村民们同时把门闩扣上。陆见遥的委托书在衣袋里发"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0006_prologue"
+                },
+                {
+                  "id": "beat_0006_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "热，封皮上委托人的名字被黑墨涂掉，只剩一句：把失踪者还给他们的名字。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0007_prologue"
+                },
+                {
+                  "id": "beat_0007_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0008_prologue"
+                },
+                {
+                  "id": "beat_0008_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0009_prologue"
+                },
+                {
+                  "id": "beat_0009_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0010_prologue"
+                },
+                {
+                  "id": "beat_0010_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0011_prologue"
+                },
+                {
+                  "id": "beat_0011_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0012_prologue"
+                },
+                {
+                  "id": "beat_0012_prologue",
+                  "line": {
+                    "kind": "narration",
+                    "text": "只登记姓氏，听红伞讲夜禁 / 冒雾查看三盏白灯 / 要求灯守解释雾灯机关"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_02_ch1",
+      "title": "第一局 完美献名者",
+      "scenes": [
+        {
+          "id": "ch1_scene",
+          "title": "山神祠与旧缆车洞",
+          "shots": [
+            {
+              "id": "ch1_shot_1",
+              "title": "第二日 / 献名宴前",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_shrine_forest",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c03",
+                    "spriteId": "sprite_c03",
+                    "expression": "neutral",
+                    "position": "center",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c07",
+                    "spriteId": "sprite_c07",
+                    "expression": "neutral",
+                    "position": "right",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0013_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "第一位献名者被发现时，供桌上的白布没有一丝皱褶。黑雨长老说那孩子从未属于村里，献名只是山神把错误改正。灰账房却"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_shrine_forest",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c03",
+                        "spriteId": "sprite_c03",
+                        "expression": "neutral",
+                        "position": "center",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c07",
+                        "spriteId": "sprite_c07",
+                        "expression": "neutral",
+                        "position": "right",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0014_ch1"
+                },
+                {
+                  "id": "beat_0014_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "在账册上翻得太快，快到陆见遥看见一整行空白。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0015_ch1"
+                },
+                {
+                  "id": "beat_0015_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "神祠窗棂外有一道影子，被村民当成祭品升天的证据。磨刀学徒低声说影子太高，像成年人把灯举在肩上。神祠后方的草丛里"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0016_ch1"
+                },
+                {
+                  "id": "beat_0016_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "，旧缆绳留下新鲜油污，通向早被封死的矿洞方向。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0017_ch1"
+                },
+                {
+                  "id": "beat_0017_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "纸鸢女把一只断线纸鸢塞给陆见遥，上面有身高刻痕和歪斜字迹：不要让他们再拿走名字。她说自己记不得写字的人，可她的"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0018_ch1"
+                },
+                {
+                  "id": "beat_0018_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "手一直在发抖。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0019_ch1"
+                },
+                {
+                  "id": "beat_0019_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0020_ch1"
+                },
+                {
+                  "id": "beat_0020_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0021_ch1"
+                },
+                {
+                  "id": "beat_0021_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0022_ch1"
+                },
+                {
+                  "id": "beat_0022_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0023_ch1"
+                },
+                {
+                  "id": "beat_0023_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0024_ch1"
+                },
+                {
+                  "id": "beat_0024_ch1",
+                  "line": {
+                    "kind": "narration",
+                    "text": "调查供桌下方水声 / 沿油污进入旧缆车洞 / 相信长老，错投灯守 / 追问纸鸢女的刻痕"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_03_ch2",
+      "title": "第二局 水女梦游",
+      "scenes": [
+        {
+          "id": "ch2_scene",
+          "title": "旧校舍、水井与护士房",
+          "shots": [
+            {
+              "id": "ch2_shot_1",
+              "title": "第三日 / 雨后",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_inn_room",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c05",
+                    "spriteId": "sprite_c05",
+                    "expression": "neutral",
+                    "position": "center",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c06",
+                    "spriteId": "sprite_c06",
+                    "expression": "neutral",
+                    "position": "right",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0025_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "旧校舍的井盖被锁得很紧，白绫教员说钥匙只有自己和长老有。可锁孔边缘有复制痕，像有人用软蜡拓过形。孩子们的课桌还"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_inn_room",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c05",
+                        "spriteId": "sprite_c05",
+                        "expression": "neutral",
+                        "position": "center",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c06",
+                        "spriteId": "sprite_c06",
+                        "expression": "neutral",
+                        "position": "right",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0026_ch2"
+                },
+                {
+                  "id": "beat_0026_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "摆着名字牌，其中几张被水泡得只剩姓氏。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0027_ch2"
+                },
+                {
+                  "id": "beat_0027_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "水壶护士每天按同一条路线送药，先到校舍，再去旅店，最后把剩水倒进祠后的陶缸。她承认自己怕水，却坚持说献名者的梦"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0028_ch2"
+                },
+                {
+                  "id": "beat_0028_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "游是病，不是药。陆见遥在水桶底摸到一层细白粉。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0029_ch2"
+                },
+                {
+                  "id": "beat_0029_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "红伞的登记册夹层里藏着旧名单，白绫教员的枕下则有半片镇静剂。两份证据合在一起，梦游杀人的故事开始松动：有人让村"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0030_ch2"
+                },
+                {
+                  "id": "beat_0030_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "里相信人会在夜里变成另一个名字。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0031_ch2"
+                },
+                {
+                  "id": "beat_0031_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0032_ch2"
+                },
+                {
+                  "id": "beat_0032_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0033_ch2"
+                },
+                {
+                  "id": "beat_0033_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0034_ch2"
+                },
+                {
+                  "id": "beat_0034_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0035_ch2"
+                },
+                {
+                  "id": "beat_0035_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0036_ch2"
+                },
+                {
+                  "id": "beat_0036_ch2",
+                  "line": {
+                    "kind": "narration",
+                    "text": "比对护士送药路线与死亡时间 / 检查水井钥匙复制痕 / 公开红伞夹层登记册 / 相信旅店伪证，指认红伞"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_04_ch3",
+      "title": "第三局 无面尸与殉情",
+      "scenes": [
+        {
+          "id": "ch3_scene",
+          "title": "村口、旅店墙缝与旧矿道",
+          "shots": [
+            {
+              "id": "ch3_shot_1",
+              "title": "第四夜 / 大雾",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_forest_path",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c02",
+                    "spriteId": "sprite_c02",
+                    "expression": "neutral",
+                    "position": "center",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c08",
+                    "spriteId": "sprite_c08",
+                    "expression": "neutral",
+                    "position": "right",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0037_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "村口出现一具无面尸，穿着白灯救援社制服。巡夜人要求立刻封村，白灯经理则温和地提出接管调查。尸体牙齿被磨过，制服"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_forest_path",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c02",
+                        "spriteId": "sprite_c02",
+                        "expression": "neutral",
+                        "position": "center",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c08",
+                        "spriteId": "sprite_c08",
+                        "expression": "neutral",
+                        "position": "right",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0038_ch3"
+                },
+                {
+                  "id": "beat_0038_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "尺码却大得离谱，像一个人穿了另一个人的身份。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0039_ch3"
+                },
+                {
+                  "id": "beat_0039_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "红伞房里有第一封遗书，墨迹新得不合时宜。墙缝里还有第二封，字迹更稳，写着她早知道自己登记为死亡。所谓殉情案只是"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0040_ch3"
+                },
+                {
+                  "id": "beat_0040_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "把旧名单再清洗一遍，让同名者互相替死。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0041_ch3"
+                },
+                {
+                  "id": "beat_0041_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "无面尸袖口嵌着旧制服扣，鞋底沾着矿道白灰。磨刀学徒第一次承认自己见过山犬换装：他们不是怪物，是被制度挑出来、训"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0042_ch3"
+                },
+                {
+                  "id": "beat_0042_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "练过、又随时可以被抹去的人。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0043_ch3"
+                },
+                {
+                  "id": "beat_0043_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0044_ch3"
+                },
+                {
+                  "id": "beat_0044_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0045_ch3"
+                },
+                {
+                  "id": "beat_0045_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0046_ch3"
+                },
+                {
+                  "id": "beat_0046_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0047_ch3"
+                },
+                {
+                  "id": "beat_0047_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0048_ch3"
+                },
+                {
+                  "id": "beat_0048_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "验尸并记录牙齿与制服尺码 / 拆开旅店墙缝，阅读第二封遗书 / 追踪鞋底白灰到旧矿道支路 / 认定殉情案，交出"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0049_ch3"
+                },
+                {
+                  "id": "beat_0049_ch3",
+                  "line": {
+                    "kind": "narration",
+                    "text": "遗书"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_05_ch4",
+      "title": "第四局 旧宴回声",
+      "scenes": [
+        {
+          "id": "ch4_scene",
+          "title": "祖屋、酒馆、雾灯塔",
+          "shots": [
+            {
+              "id": "ch4_shot_1",
+              "title": "第五日 / 献名宴",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_shrine_forest",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c15",
+                    "spriteId": "sprite_c15",
+                    "expression": "neutral",
+                    "position": "center",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c04",
+                    "spriteId": "sprite_c04",
+                    "expression": "neutral",
+                    "position": "right",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0050_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "旧宴不是祭祀，而是一次投票。花牌客把债务名单混进牌局，谁欠粮、谁有双生、谁的孩子没有登记，都能被算成适合献名的"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_shrine_forest",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c15",
+                        "spriteId": "sprite_c15",
+                        "expression": "neutral",
+                        "position": "center",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c04",
+                        "spriteId": "sprite_c04",
+                        "expression": "neutral",
+                        "position": "right",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0051_ch4"
+                },
+                {
+                  "id": "beat_0051_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "理由。黑雨长老主持规则，却从不解释规则从何而来。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0052_ch4"
+                },
+                {
+                  "id": "beat_0052_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "火纹姐拿出出生簿，证明她曾有一个弟弟；旧琴匠播放雾夜录音，声音在塔身里绕了两圈，便像从山里传来的神谕。所谓神意"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0053_ch4"
+                },
+                {
+                  "id": "beat_0053_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "，原来可以用灯、录音和恐惧拼装。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0054_ch4"
+                },
+                {
+                  "id": "beat_0054_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "灯守的维修图显示雾灯可以按时自动变白。巡夜铃记录排出了夜间行动顺序，越接近真相，村民越想让陆见遥公开所有真名。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0055_ch4"
+                },
+                {
+                  "id": "beat_0055_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "可纸鸢女警告他：真名不是武器，乱扔出去会先砸死幸存者。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0056_ch4"
+                },
+                {
+                  "id": "beat_0056_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0057_ch4"
+                },
+                {
+                  "id": "beat_0057_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0058_ch4"
+                },
+                {
+                  "id": "beat_0058_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0059_ch4"
+                },
+                {
+                  "id": "beat_0059_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0060_ch4"
+                },
+                {
+                  "id": "beat_0060_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0061_ch4"
+                },
+                {
+                  "id": "beat_0061_ch4",
+                  "line": {
+                    "kind": "narration",
+                    "text": "整理火纹出生簿与投票表 / 播放旧琴录音，复原假神谕 / 按村民要求公开全部真名 / 核对巡夜铃记录"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_06_trial",
+      "title": "合议 合议厅：三次质证",
+      "scenes": [
+        {
+          "id": "trial_scene",
+          "title": "祖屋内厅",
+          "shots": [
+            {
+              "id": "trial_shot_1",
+              "title": "第五夜 / 合议厅",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_shrine_forest",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c10",
+                    "spriteId": "sprite_c10",
+                    "expression": "neutral",
+                    "position": "center",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c15",
+                    "spriteId": "sprite_c15",
+                    "expression": "neutral",
+                    "position": "right",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0062_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "合议厅里每个人都坐在写着旧名的木牌后面。白灯经理说救援社只是旁观者，黑雨长老说献名古已有之，灰账房说账册里没有"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_shrine_forest",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c10",
+                        "spriteId": "sprite_c10",
+                        "expression": "neutral",
+                        "position": "center",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c15",
+                        "spriteId": "sprite_c15",
+                        "expression": "neutral",
+                        "position": "right",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0063_trial"
+                },
+                {
+                  "id": "beat_0063_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "孩子。陆见遥必须用证据逐条挑战，而不是把所有秘密一次倒出。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0064_trial"
+                },
+                {
+                  "id": "beat_0064_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "这里进入专门的审判模式。选择一条说法，再用右侧或下方证据按钮提交。正确质证会点亮证据链，错误质证不会失败，但会"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0065_trial"
+                },
+                {
+                  "id": "beat_0065_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "提示你还差哪类信息。三条质证完成后，终局分支会开启。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0066_trial"
+                },
+                {
+                  "id": "beat_0066_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0067_trial"
+                },
+                {
+                  "id": "beat_0067_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0068_trial"
+                },
+                {
+                  "id": "beat_0068_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0069_trial"
+                },
+                {
+                  "id": "beat_0069_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0070_trial"
+                },
+                {
+                  "id": "beat_0070_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0071_trial"
+                },
+                {
+                  "id": "beat_0071_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "进入质证面板 / 先整理证据与人物 / 查看流程图确认锁定分支"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_07_ch5",
+      "title": "终局 白灯救援社",
+      "scenes": [
+        {
+          "id": "ch5_scene",
+          "title": "旧矿道档案室",
+          "shots": [
+            {
+              "id": "ch5_shot_1",
+              "title": "第六日 / 黎明前",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_village_fog",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c10",
+                    "spriteId": "sprite_c10",
+                    "expression": "neutral",
+                    "position": "center",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  },
+                  {
+                    "characterId": "c16",
+                    "spriteId": "sprite_c16",
+                    "expression": "neutral",
+                    "position": "right",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0072_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "旧矿道最深处不是祭坛，而是档案室。白灯契约副本、镇静剂采购单和第一献名者信排在同一个铁柜里，像三根线终于缠成绳"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_village_fog",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c10",
+                        "spriteId": "sprite_c10",
+                        "expression": "neutral",
+                        "position": "center",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      },
+                      {
+                        "characterId": "c16",
+                        "spriteId": "sprite_c16",
+                        "expression": "neutral",
+                        "position": "right",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0073_ch5"
+                },
+                {
+                  "id": "beat_0073_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "。村民制造了献名，白灯把它变成可复制的治理项目。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0074_ch5"
+                },
+                {
+                  "id": "beat_0074_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "陆见遥找到了自己的旧档案。亲生母亲的名字被划去，旁边写着“可迁出样本”。他终于明白委托书不是某个人寄来的，而是"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0075_ch5"
+                },
+                {
+                  "id": "beat_0075_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "许多被除名者留下的接力棒。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0076_ch5"
+                },
+                {
+                  "id": "beat_0076_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "终局不是选一个凶手，而是决定公开哪些证据、保护哪些人、让哪些名字回到自己身上。不同选择会进入不同结局；证据链完"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0077_ch5"
+                },
+                {
+                  "id": "beat_0077_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "整时，可以选择归名之日。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0078_ch5"
+                },
+                {
+                  "id": "beat_0078_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0079_ch5"
+                },
+                {
+                  "id": "beat_0079_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0080_ch5"
+                },
+                {
+                  "id": "beat_0080_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0081_ch5"
+                },
+                {
+                  "id": "beat_0081_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0082_ch5"
+                },
+                {
+                  "id": "beat_0082_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0083_ch5"
+                },
+                {
+                  "id": "beat_0083_ch5",
+                  "line": {
+                    "kind": "narration",
+                    "text": "烧毁档案，只带幸存者离村 / 把证据交给白灯总部 / 公开全部真名与账册 / 选择性公开证据，归还被除名者"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_08_ending_fogless",
+      "title": "坏结局 雾中无名",
+      "scenes": [
+        {
+          "id": "ending_fogless_scene",
+          "title": "白雾深处",
+          "shots": [
+            {
+              "id": "ending_fogless_shot_1",
+              "title": "第一夜 / 村口",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_forest_path",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0084_ending_fogless",
+                  "line": {
+                    "kind": "narration",
+                    "text": "陆见遥踏出旅店时，三盏白灯同时熄灭。第二天登记簿上多了一个只有姓氏的客人，姓名栏被雾水泡开，像从未有人写过。你"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_forest_path",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0085_ending_fogless"
+                },
+                {
+                  "id": "beat_0085_ending_fogless",
+                  "line": {
+                    "kind": "narration",
+                    "text": "获得了失败 Key，它会帮助下一轮识破夜禁。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0086_ending_fogless"
+                },
+                {
+                  "id": "beat_0086_ending_fogless",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0087_ending_fogless"
+                },
+                {
+                  "id": "beat_0087_ending_fogless",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0088_ending_fogless"
+                },
+                {
+                  "id": "beat_0088_ending_fogless",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0089_ending_fogless"
+                },
+                {
+                  "id": "beat_0089_ending_fogless",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0090_ending_fogless"
+                },
+                {
+                  "id": "beat_0090_ending_fogless",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0091_ending_fogless"
+                },
+                {
+                  "id": "beat_0091_ending_fogless",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到序章重读"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_09_ending_table",
+      "title": "坏结局 供桌下的空白",
+      "scenes": [
+        {
+          "id": "ending_table_scene",
+          "title": "供桌前",
+          "shots": [
+            {
+              "id": "ending_table_shot_1",
+              "title": "第二日 / 山神祠",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_shrine_forest",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0092_ending_table",
+                  "line": {
+                    "kind": "narration",
+                    "text": "灯守被推上献名席后，雾灯照常变白。供桌下传来水声，像有人在黑暗里笑。你知道自己错了，却也因此记住密室下方另有通"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_shrine_forest",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0093_ending_table"
+                },
+                {
+                  "id": "beat_0093_ending_table",
+                  "line": {
+                    "kind": "narration",
+                    "text": "道。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0094_ending_table"
+                },
+                {
+                  "id": "beat_0094_ending_table",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0095_ending_table"
+                },
+                {
+                  "id": "beat_0095_ending_table",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0096_ending_table"
+                },
+                {
+                  "id": "beat_0096_ending_table",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0097_ending_table"
+                },
+                {
+                  "id": "beat_0097_ending_table",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0098_ending_table"
+                },
+                {
+                  "id": "beat_0098_ending_table",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0099_ending_table"
+                },
+                {
+                  "id": "beat_0099_ending_table",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到第一局"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_10_ending_redumbrella",
+      "title": "坏结局 错投红伞",
+      "scenes": [
+        {
+          "id": "ending_redumbrella_scene",
+          "title": "红伞旅店",
+          "shots": [
+            {
+              "id": "ending_redumbrella_shot_1",
+              "title": "第三日 / 旅店",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_inn_room",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0100_ending_redumbrella",
+                  "line": {
+                    "kind": "narration",
+                    "text": "红伞没有辩解，只把夹层登记册推给你。她早在白灯档案里死过一次，如今又被村民投死第二次。药签批号成了你下一轮翻案"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_inn_room",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0101_ending_redumbrella"
+                },
+                {
+                  "id": "beat_0101_ending_redumbrella",
+                  "line": {
+                    "kind": "narration",
+                    "text": "的入口。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0102_ending_redumbrella"
+                },
+                {
+                  "id": "beat_0102_ending_redumbrella",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0103_ending_redumbrella"
+                },
+                {
+                  "id": "beat_0103_ending_redumbrella",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0104_ending_redumbrella"
+                },
+                {
+                  "id": "beat_0104_ending_redumbrella",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0105_ending_redumbrella"
+                },
+                {
+                  "id": "beat_0105_ending_redumbrella",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0106_ending_redumbrella"
+                },
+                {
+                  "id": "beat_0106_ending_redumbrella",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0107_ending_redumbrella"
+                },
+                {
+                  "id": "beat_0107_ending_redumbrella",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到第二局"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_11_ending_letters",
+      "title": "坏结局 两封遗书",
+      "scenes": [
+        {
+          "id": "ending_letters_scene",
+          "title": "封村线",
+          "shots": [
+            {
+              "id": "ending_letters_shot_1",
+              "title": "第四夜 / 村口",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_forest_path",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0108_ending_letters",
+                  "line": {
+                    "kind": "narration",
+                    "text": "两封遗书被合成一个殉情故事，无面尸的身份就此封存。可你在鞋底白灰里看见旧矿道的方向，知道尸体不是从村口来的。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_forest_path",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0109_ending_letters"
+                },
+                {
+                  "id": "beat_0109_ending_letters",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0110_ending_letters"
+                },
+                {
+                  "id": "beat_0110_ending_letters",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0111_ending_letters"
+                },
+                {
+                  "id": "beat_0111_ending_letters",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0112_ending_letters"
+                },
+                {
+                  "id": "beat_0112_ending_letters",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0113_ending_letters"
+                },
+                {
+                  "id": "beat_0113_ending_letters",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0114_ending_letters"
+                },
+                {
+                  "id": "beat_0114_ending_letters",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到第三局"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_12_ending_village_trial",
+      "title": "坏结局 全村处刑",
+      "scenes": [
+        {
+          "id": "ending_village_trial_scene",
+          "title": "祖屋",
+          "shots": [
+            {
+              "id": "ending_village_trial_shot_1",
+              "title": "第五日 / 合议厅",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_shrine_forest",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0115_ending_village_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "所有真名被一次公开，合议厅立刻变成清算场。欠债者、双生者、曾经沉默的人互相指认，黑雨长老反而退到阴影里。你获得"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_shrine_forest",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0116_ending_village_trial"
+                },
+                {
+                  "id": "beat_0116_ending_village_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "警告：真名越多越好，是另一种谎言。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0117_ending_village_trial"
+                },
+                {
+                  "id": "beat_0117_ending_village_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0118_ending_village_trial"
+                },
+                {
+                  "id": "beat_0118_ending_village_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0119_ending_village_trial"
+                },
+                {
+                  "id": "beat_0119_ending_village_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0120_ending_village_trial"
+                },
+                {
+                  "id": "beat_0120_ending_village_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0121_ending_village_trial"
+                },
+                {
+                  "id": "beat_0121_ending_village_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0122_ending_village_trial"
+                },
+                {
+                  "id": "beat_0122_ending_village_trial",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到第四局"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_13_ending_survival",
+      "title": "结局 雾外余生",
+      "scenes": [
+        {
+          "id": "ending_survival_scene",
+          "title": "离村客车",
+          "shots": [
+            {
+              "id": "ending_survival_shot_1",
+              "title": "第六日 / 山路",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_forest_path",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0123_ending_survival",
+                  "line": {
+                    "kind": "narration",
+                    "text": "你烧毁档案，带几名幸存者坐上离村客车。雾名村在后视镜里重新合拢，许多名字仍留在山里。活着离开是真的，沉默延续也"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_forest_path",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0124_ending_survival"
+                },
+                {
+                  "id": "beat_0124_ending_survival",
+                  "line": {
+                    "kind": "narration",
+                    "text": "是真的。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0125_ending_survival"
+                },
+                {
+                  "id": "beat_0125_ending_survival",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0126_ending_survival"
+                },
+                {
+                  "id": "beat_0126_ending_survival",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0127_ending_survival"
+                },
+                {
+                  "id": "beat_0127_ending_survival",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0128_ending_survival"
+                },
+                {
+                  "id": "beat_0128_ending_survival",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0129_ending_survival"
+                },
+                {
+                  "id": "beat_0129_ending_survival",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0130_ending_survival"
+                },
+                {
+                  "id": "beat_0130_ending_survival",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到终局重选"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_14_ending_new_pact",
+      "title": "结局 白灯新约",
+      "scenes": [
+        {
+          "id": "ending_new_pact_scene",
+          "title": "白灯临时办公室",
+          "shots": [
+            {
+              "id": "ending_new_pact_shot_1",
+              "title": "第六日 / 县城",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_village_fog",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0131_ending_new_pact",
+                  "line": {
+                    "kind": "narration",
+                    "text": "白灯总部感谢你的材料，随后宣布旧项目由地方人员违规操作造成。救援社换了徽章、合同和负责人，献名制度也被改写成心"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_village_fog",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0132_ending_new_pact"
+                },
+                {
+                  "id": "beat_0132_ending_new_pact",
+                  "line": {
+                    "kind": "narration",
+                    "text": "理援助试点。你赢了一场发布会，输给了新约。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0133_ending_new_pact"
+                },
+                {
+                  "id": "beat_0133_ending_new_pact",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0134_ending_new_pact"
+                },
+                {
+                  "id": "beat_0134_ending_new_pact",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0135_ending_new_pact"
+                },
+                {
+                  "id": "beat_0135_ending_new_pact",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0136_ending_new_pact"
+                },
+                {
+                  "id": "beat_0136_ending_new_pact",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0137_ending_new_pact"
+                },
+                {
+                  "id": "beat_0137_ending_new_pact",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0138_ending_new_pact"
+                },
+                {
+                  "id": "beat_0138_ending_new_pact",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到终局重选"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_15_ending_name_rain",
+      "title": "结局 名字暴雨",
+      "scenes": [
+        {
+          "id": "ending_name_rain_scene",
+          "title": "雾名村广场",
+          "shots": [
+            {
+              "id": "ending_name_rain_shot_1",
+              "title": "第六日 / 广场",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_village_fog",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0139_ending_name_rain",
+                  "line": {
+                    "kind": "narration",
+                    "text": "账册和真名被贴满广场。每个人都终于知道自己失去了什么，也立刻知道该恨谁。名字像暴雨落下，冲开制度，也冲垮幸存者"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_village_fog",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0140_ending_name_rain"
+                },
+                {
+                  "id": "beat_0140_ending_name_rain",
+                  "line": {
+                    "kind": "narration",
+                    "text": "最后的互信。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0141_ending_name_rain"
+                },
+                {
+                  "id": "beat_0141_ending_name_rain",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0142_ending_name_rain"
+                },
+                {
+                  "id": "beat_0142_ending_name_rain",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0143_ending_name_rain"
+                },
+                {
+                  "id": "beat_0143_ending_name_rain",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0144_ending_name_rain"
+                },
+                {
+                  "id": "beat_0144_ending_name_rain",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0145_ending_name_rain"
+                },
+                {
+                  "id": "beat_0145_ending_name_rain",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0146_ending_name_rain"
+                },
+                {
+                  "id": "beat_0146_ending_name_rain",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到终局重选"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter_16_ending_return_names",
+      "title": "真结局 归名之日",
+      "scenes": [
+        {
+          "id": "ending_return_names_scene",
+          "title": "旧校舍操场",
+          "shots": [
+            {
+              "id": "ending_return_names_shot_1",
+              "title": "第六日 / 雾散",
+              "renderMode": "stage",
+              "initialStage": {
+                "renderMode": "stage",
+                "backgroundId": "bg_shrine_forest",
+                "characters": [
+                  {
+                    "characterId": "c01",
+                    "spriteId": "sprite_c01",
+                    "expression": "neutral",
+                    "position": "left",
+                    "visible": true,
+                    "focus": "normal",
+                    "facing": "front",
+                    "scale": 1
+                  }
+                ]
+              },
+              "beats": [
+                {
+                  "id": "beat_0147_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "你公开白灯契约、采购单和第一献名者信，同时隐去仍会伤害幸存者的私密真名。被除名者的名单由家属逐一确认，山犬名单"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage",
+                    "backgroundId": "bg_shrine_forest",
+                    "characters": [
+                      {
+                        "characterId": "c01",
+                        "spriteId": "sprite_c01",
+                        "expression": "neutral",
+                        "position": "left",
+                        "visible": true,
+                        "focus": "normal",
+                        "facing": "front",
+                        "scale": 1
+                      }
+                    ]
+                  },
+                  "nextBeatId": "beat_0148_ending_return_names"
+                },
+                {
+                  "id": "beat_0148_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "半页则成为追责入口，而不是猎巫名单。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0149_ending_return_names"
+                },
+                {
+                  "id": "beat_0149_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "白衣孩子的纸鸢被挂回旧校舍门口。雾没有奇迹般散尽，但村民第一次在灯亮前自己开门。陆见遥在归名簿上补回母亲的名字"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0150_ending_return_names"
+                },
+                {
+                  "id": "beat_0150_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "，也把自己的全名写在最后一行。"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0151_ending_return_names"
+                },
+                {
+                  "id": "beat_0151_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0152_ending_return_names"
+                },
+                {
+                  "id": "beat_0152_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0153_ending_return_names"
+                },
+                {
+                  "id": "beat_0153_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0154_ending_return_names"
+                },
+                {
+                  "id": "beat_0154_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0155_ending_return_names"
+                },
+                {
+                  "id": "beat_0155_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "?"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  },
+                  "nextBeatId": "beat_0156_ending_return_names"
+                },
+                {
+                  "id": "beat_0156_ending_return_names",
+                  "line": {
+                    "kind": "narration",
+                    "text": "回到流程图回看"
+                  },
+                  "stagePatch": {
+                    "renderMode": "stage"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "startBeatId": "beat_0001_prologue",
+  "metadata": {
+    "sampleKind": "fog-name-village-import-package",
+    "source": "Originalized mystery VN sample derived from local planning docs, not raw OCR/PDF content.",
+    "sourceData": [
+      "source/story_nodes.json",
+      "source/characters.json",
+      "source/keys.json",
+      "source/flow_nodes.json",
+      "source/endings.json"
+    ],
+    "notes": "Runtime project is linearized for current NovelGameMaker player. Branch/key/trial data is preserved in source JSON for future systems."
+  },
+  "createdAt": "2026-06-14T00:00:00.000Z",
+  "updatedAt": "2026-06-14T00:00:00.000Z"
+}

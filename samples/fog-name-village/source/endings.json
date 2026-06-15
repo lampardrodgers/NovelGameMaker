@@ -1,0 +1,12 @@
+[
+  {"id":"BE-01","name":"雾中无名","type":"bad","condition":"序章雾灯三白后违规出门","rewardKey":"K01"},
+  {"id":"BE-02","name":"供桌下的空白","type":"bad","condition":"第一局相信神隐并错投灯守","rewardKey":"K05"},
+  {"id":"BE-03","name":"错投红伞","type":"bad","condition":"第二局相信旅店伪证并投死红伞","rewardKey":"K12"},
+  {"id":"BE-04","name":"两封遗书","type":"bad","condition":"第三局认定无面尸与红伞是殉情案","rewardKey":"K21"},
+  {"id":"BE-05","name":"全村处刑","type":"bad","condition":"第四局公开过多真名导致合议失控","rewardKey":"K29"},
+  {"id":"END-A","name":"雾外余生","type":"normal","condition":"终局烧毁档案","result":"玩家活着离开，村庄继续沉默"},
+  {"id":"END-B","name":"白灯新约","type":"normal","condition":"终局把证据交给白灯救援社","result":"白灯切割责任，制度换名延续"},
+  {"id":"END-C","name":"名字暴雨","type":"normal","condition":"终局公开全部真名","result":"幸存者互相清算，村庄崩坏"},
+  {"id":"TRUE-END","name":"归名之日","type":"true","condition":"证据链完整并选择性公开真相","result":"制度被拆，被除名者开始归名"},
+  {"id":"HIDDEN-END","name":"旁听雾声","type":"hidden","condition":"Revelation Mode 全补完","result":"开放后日谈与山犬侧夜间会议"}
+]
