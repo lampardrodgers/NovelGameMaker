@@ -3,8 +3,8 @@ import { createHmac } from "node:crypto";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { createProjectFromNovel } from "@agentic-galgame/vn-agent";
-import { sampleNovelText, type VNProject } from "@agentic-galgame/vn-core";
+import { createProjectFromNovel } from "@novel-game-maker/vn-agent";
+import { sampleNovelText, type VNProject } from "@novel-game-maker/vn-core";
 import { createPlatform } from "../createPlatform";
 import { StripeBillingCheckoutProvider } from "../billing/StripeBillingCheckoutProvider";
 import { MockOAuthLoginProvider } from "../services/OAuthService";
@@ -672,7 +672,7 @@ describe("vn-platform", () => {
         dataDir: await mkdtemp(join(tmpdir(), "vn-platform-")),
         userAccountMfaPolicy: {
           enabled: true,
-          issuer: "Agentic Galgame Studio Test",
+          issuer: "NovelGameMaker Test",
           secretEncryptionKey: "test-mfa-encryption-key-at-least-32-bytes"
         }
       });

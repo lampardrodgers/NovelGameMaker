@@ -1,4 +1,4 @@
-import type { AssetManifest, CharacterProfile, VNAsset } from "@agentic-galgame/vn-core";
+import type { AssetManifest, CharacterProfile, VNAsset } from "@novel-game-maker/vn-core";
 import { UNKNOWN_SPEAKER_ID } from "./characters.js";
 
 export function createPlaceholderAssets(characters: CharacterProfile[]): AssetManifest {

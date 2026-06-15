@@ -1,6 +1,6 @@
 {
-  "name": "@agentic-galgame/vn-core",
-  "version": "0.1.0",
+  "name": "@novel-game-maker/vn-core",
+  "version": "0.1.1",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

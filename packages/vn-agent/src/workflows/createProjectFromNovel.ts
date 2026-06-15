@@ -10,7 +10,7 @@ import {
   type VNBeat,
   type VNLine,
   type VNProject
-} from "@agentic-galgame/vn-core";
+} from "@novel-game-maker/vn-core";
 import { createPlaceholderAssets } from "../heuristics/assets.js";
 import {
   assignSpeakerFocus,

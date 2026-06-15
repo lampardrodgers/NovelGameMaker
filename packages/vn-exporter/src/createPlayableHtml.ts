@@ -1,4 +1,4 @@
-import type { VNProject } from "@agentic-galgame/vn-core";
+import type { VNProject } from "@novel-game-maker/vn-core";
 
 export function createPlayableHtml(project: VNProject, runtimeBundle?: string): string {
   if (runtimeBundle) {
@@ -253,7 +253,7 @@ function load() {
 }
 
 function saveKey() {
-  return "agentic-galgame:player-save:" + state.project.id;
+  return "novel-game-maker:player-save:" + state.project.id;
 }
 
 stageEl.addEventListener("click", next);

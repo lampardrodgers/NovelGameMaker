@@ -1,6 +1,6 @@
 {
-  "name": "@agentic-galgame/vn-runtime",
-  "version": "0.1.0",
+  "name": "@novel-game-maker/vn-runtime",
+  "version": "0.1.1",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -16,7 +16,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@agentic-galgame/vn-core": "workspace:*"
+    "@novel-game-maker/vn-core": "workspace:*"
   },
   "devDependencies": {
     "vitest": "^2.1.8",

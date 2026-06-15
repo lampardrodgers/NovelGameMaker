@@ -9,9 +9,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@agentic-galgame/vn-agent": resolve(currentDir, "../../packages/vn-agent/src/index.ts"),
-      "@agentic-galgame/vn-core": resolve(currentDir, "../../packages/vn-core/src/index.ts"),
-      "@agentic-galgame/vn-runtime": resolve(currentDir, "../../packages/vn-runtime/src/index.ts")
+      "@novel-game-maker/vn-agent": resolve(currentDir, "../../packages/vn-agent/src/index.ts"),
+      "@novel-game-maker/vn-core": resolve(currentDir, "../../packages/vn-core/src/index.ts"),
+      "@novel-game-maker/vn-runtime": resolve(currentDir, "../../packages/vn-runtime/src/index.ts")
     }
   },
   server: {

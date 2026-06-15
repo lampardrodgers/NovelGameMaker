@@ -41,7 +41,7 @@ services:
       AUTH_MAX_FAILED_LOGIN_ATTEMPTS: ${AUTH_MAX_FAILED_LOGIN_ATTEMPTS:-5}
       AUTH_LOGIN_LOCKOUT_MS: ${AUTH_LOGIN_LOCKOUT_MS:-900000}
       AUTH_MFA_ENABLED: ${AUTH_MFA_ENABLED:-false}
-      AUTH_MFA_ISSUER: ${AUTH_MFA_ISSUER:-Agentic Galgame Studio}
+      AUTH_MFA_ISSUER: ${AUTH_MFA_ISSUER:-NovelGameMaker}
       AUTH_MFA_ENCRYPTION_KEY: ${AUTH_MFA_ENCRYPTION_KEY:-}
       AUTH_MFA_TOTP_STEP_SECONDS: ${AUTH_MFA_TOTP_STEP_SECONDS:-30}
       AUTH_MFA_TOTP_WINDOW_STEPS: ${AUTH_MFA_TOTP_WINDOW_STEPS:-1}
@@ -129,7 +129,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.api
-    command: ["pnpm", "--filter", "@agentic-galgame/api", "worker"]
+    command: ["pnpm", "--filter", "@novel-game-maker/api", "worker"]
     environment:
       DATA_DIR: /data
       API_PUBLIC_BASE_URL: ${API_PUBLIC_BASE_URL:?set API_PUBLIC_BASE_URL}
@@ -166,7 +166,7 @@ services:
       AUTH_MAX_FAILED_LOGIN_ATTEMPTS: ${AUTH_MAX_FAILED_LOGIN_ATTEMPTS:-5}
       AUTH_LOGIN_LOCKOUT_MS: ${AUTH_LOGIN_LOCKOUT_MS:-900000}
       AUTH_MFA_ENABLED: ${AUTH_MFA_ENABLED:-false}
-      AUTH_MFA_ISSUER: ${AUTH_MFA_ISSUER:-Agentic Galgame Studio}
+      AUTH_MFA_ISSUER: ${AUTH_MFA_ISSUER:-NovelGameMaker}
       AUTH_MFA_ENCRYPTION_KEY: ${AUTH_MFA_ENCRYPTION_KEY:-}
       AUTH_MFA_TOTP_STEP_SECONDS: ${AUTH_MFA_TOTP_STEP_SECONDS:-30}
       AUTH_MFA_TOTP_WINDOW_STEPS: ${AUTH_MFA_TOTP_WINDOW_STEPS:-1}

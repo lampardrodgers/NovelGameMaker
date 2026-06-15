@@ -1,4 +1,4 @@
-import type { VNAsset, VNProject } from "@agentic-galgame/vn-core";
+import type { VNAsset, VNProject } from "@novel-game-maker/vn-core";
 import type {
   AssetRecord,
   DeploymentInvalidationRecord,

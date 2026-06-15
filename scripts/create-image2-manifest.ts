@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { createCodexImage2Manifest } from "@agentic-galgame/vn-agent";
+import { createCodexImage2Manifest } from "@novel-game-maker/vn-agent";
 
 const rootDir = resolve(import.meta.dirname, "..");
 const projectPath = resolve(rootDir, process.argv[2] ?? "samples/steins-like-lab/project.vn.json");

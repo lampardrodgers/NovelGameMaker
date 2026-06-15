@@ -1,6 +1,6 @@
 {
-  "name": "@agentic-galgame/player",
-  "version": "0.1.0",
+  "name": "@novel-game-maker/player",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,8 +10,8 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@agentic-galgame/vn-core": "workspace:*",
-    "@agentic-galgame/vn-runtime": "workspace:*",
+    "@novel-game-maker/vn-core": "workspace:*",
+    "@novel-game-maker/vn-runtime": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

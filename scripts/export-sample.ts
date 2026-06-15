@@ -1,8 +1,8 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { sampleNovelText } from "@agentic-galgame/vn-core";
-import { createProjectFromNovel } from "@agentic-galgame/vn-agent";
-import { exportStaticBundle } from "@agentic-galgame/vn-exporter";
+import { sampleNovelText } from "@novel-game-maker/vn-core";
+import { createProjectFromNovel } from "@novel-game-maker/vn-agent";
+import { exportStaticBundle } from "@novel-game-maker/vn-exporter";
 
 const rootDir = resolve(import.meta.dirname, "..");
 const sampleProject = createProjectFromNovel({

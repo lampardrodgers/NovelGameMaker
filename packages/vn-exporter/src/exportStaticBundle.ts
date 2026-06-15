@@ -1,6 +1,6 @@
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import type { VNProject } from "@agentic-galgame/vn-core";
+import type { VNProject } from "@novel-game-maker/vn-core";
 import { createPlayableHtml } from "./createPlayableHtml.js";
 import { createPlaceholderSvg } from "./placeholderSvg.js";
 

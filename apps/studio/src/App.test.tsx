@@ -268,7 +268,7 @@ describe("Studio App", () => {
     fireEvent.click(within(account).getByRole("button", { name: "Register" }));
 
     await waitFor(() => expect(screen.getByText("Registered account: editor@example.com")).toBeInTheDocument());
-    expect(localStorage.getItem("agentic-galgame-studio:account-session")).toBe("vns_session");
+    expect(localStorage.getItem("novel-game-maker:account-session")).toBe("vns_session");
 
     fireEvent.click(within(account).getByRole("button", { name: "Refresh Account" }));
     await waitFor(() => expect(screen.getByText("Loaded account: editor@example.com")).toBeInTheDocument());
@@ -313,14 +313,14 @@ describe("Studio App", () => {
     fireEvent.click(within(account).getByRole("button", { name: "Confirm Reset" }));
 
     await waitFor(() => expect(screen.getByText("Password reset completed: editor@example.com")).toBeInTheDocument());
-    expect(localStorage.getItem("agentic-galgame-studio:account-session")).toBeNull();
+    expect(localStorage.getItem("novel-game-maker:account-session")).toBeNull();
 
     fireEvent.change(within(account).getByPlaceholderText("at least 8 characters"), {
       target: { value: "new-correct-password" }
     });
     fireEvent.click(within(account).getByRole("button", { name: "Login" }));
     await waitFor(() => expect(screen.getByText("MFA code required")).toBeInTheDocument());
-    expect(localStorage.getItem("agentic-galgame-studio:account-session")).toBeNull();
+    expect(localStorage.getItem("novel-game-maker:account-session")).toBeNull();
 
 	    fireEvent.change(within(account).getByLabelText("MFA login code"), {
 	      target: { value: "654321" }
@@ -328,8 +328,8 @@ describe("Studio App", () => {
 	    fireEvent.click(within(account).getByLabelText("Remember MFA device"));
 	    fireEvent.click(within(account).getByRole("button", { name: "Login" }));
 	    await waitFor(() => expect(screen.getByText("Logged in: editor@example.com")).toBeInTheDocument());
-	    expect(localStorage.getItem("agentic-galgame-studio:account-session")).toBe("vns_mfa_session");
-	    expect(localStorage.getItem("agentic-galgame-studio:mfa-device-token")).toBe("vnd_device");
+	    expect(localStorage.getItem("novel-game-maker:account-session")).toBe("vns_mfa_session");
+	    expect(localStorage.getItem("novel-game-maker:mfa-device-token")).toBe("vnd_device");
 	    expect(within(account).getByText(/device remembered/)).toBeInTheDocument();
 
 	    fireEvent.change(within(account).getByLabelText("MFA trusted devices password"), {
@@ -340,7 +340,7 @@ describe("Studio App", () => {
 	    });
 	    fireEvent.click(within(account).getByRole("button", { name: "Forget Devices" }));
 	    await waitFor(() => expect(screen.getByText("MFA trusted devices revoked: editor@example.com")).toBeInTheDocument());
-	    expect(localStorage.getItem("agentic-galgame-studio:mfa-device-token")).toBeNull();
+	    expect(localStorage.getItem("novel-game-maker:mfa-device-token")).toBeNull();
 
     fireEvent.change(within(account).getByLabelText("MFA disable password"), {
       target: { value: "new-correct-password" }
@@ -361,7 +361,7 @@ describe("Studio App", () => {
     expect(revokeSessionButton).toBeTruthy();
     fireEvent.click(revokeSessionButton!);
     await waitFor(() => expect(screen.getByText("Revoked account session: session_mfa")).toBeInTheDocument());
-    expect(localStorage.getItem("agentic-galgame-studio:account-session")).toBeNull();
+    expect(localStorage.getItem("novel-game-maker:account-session")).toBeNull();
     expect(within(account).getByText("No account session")).toBeInTheDocument();
   });
 
@@ -416,7 +416,7 @@ describe("Studio App", () => {
     fireEvent.click(within(account).getByRole("button", { name: "Complete SSO" }));
 
     await waitFor(() => expect(screen.getByText("SSO logged in: sso.editor@example.com")).toBeInTheDocument());
-    expect(localStorage.getItem("agentic-galgame-studio:account-session")).toBe("vns_sso_session");
+    expect(localStorage.getItem("novel-game-maker:account-session")).toBe("vns_sso_session");
   });
 
   it("shows non-stage characters as not visible in the inspector", () => {

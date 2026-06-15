@@ -1,4 +1,4 @@
-import type { VNAsset, VNProject, VNAssetType } from "@agentic-galgame/vn-core";
+import type { VNAsset, VNProject, VNAssetType } from "@novel-game-maker/vn-core";
 
 export interface CodexImage2AssetPrompt {
   assetId: string;

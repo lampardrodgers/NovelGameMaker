@@ -4,7 +4,7 @@ import type {
   StageCharacter,
   VNAsset,
   VNProject
-} from "@agentic-galgame/vn-core";
+} from "@novel-game-maker/vn-core";
 import type { VNRenderer, VNRuntimeControls } from "./Renderer.js";
 import { formatTextboxText } from "./TextboxController.js";
 

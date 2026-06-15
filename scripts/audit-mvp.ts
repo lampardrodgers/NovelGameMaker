@@ -6,8 +6,8 @@ import {
   sampleNovelText,
   validateProject,
   type VNProject
-} from "@agentic-galgame/vn-core";
-import { createProjectFromNovel, LocalHeuristicVNAgentWorkflow } from "@agentic-galgame/vn-agent";
+} from "@novel-game-maker/vn-core";
+import { createProjectFromNovel, LocalHeuristicVNAgentWorkflow } from "@novel-game-maker/vn-agent";
 
 const rootDir = resolve(import.meta.dirname, "..");
 const checks: string[] = [];

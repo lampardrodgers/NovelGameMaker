@@ -4,9 +4,9 @@ import {
   sampleNovelText,
   type VNAsset,
   type VNProject
-} from "@agentic-galgame/vn-core";
-import { createProjectFromNovel } from "@agentic-galgame/vn-agent";
-import { loadProjectFromJson } from "@agentic-galgame/vn-runtime";
+} from "@novel-game-maker/vn-core";
+import { createProjectFromNovel } from "@novel-game-maker/vn-agent";
+import { loadProjectFromJson } from "@novel-game-maker/vn-runtime";
 import { BeatTree } from "./components/BeatTree";
 import { Inspector } from "./components/Inspector";
 import { NovelImportPanel } from "./components/NovelImportPanel";
@@ -55,11 +55,11 @@ import {
   type ProductionUserSessionRecord
 } from "./studio/productionApi";
 
-const LOCAL_PROJECT_KEY = "agentic-galgame-studio:project";
-const LOCAL_NOVEL_KEY = "agentic-galgame-studio:novel";
-const LOCAL_OWNER_KEY = "agentic-galgame-studio:owner";
-const LOCAL_ACCOUNT_SESSION_KEY = "agentic-galgame-studio:account-session";
-const LOCAL_MFA_DEVICE_KEY = "agentic-galgame-studio:mfa-device-token";
+const LOCAL_PROJECT_KEY = "novel-game-maker:project";
+const LOCAL_NOVEL_KEY = "novel-game-maker:novel";
+const LOCAL_OWNER_KEY = "novel-game-maker:owner";
+const LOCAL_ACCOUNT_SESSION_KEY = "novel-game-maker:account-session";
+const LOCAL_MFA_DEVICE_KEY = "novel-game-maker:mfa-device-token";
 
 export function App() {
   const previewRef = useRef<RuntimePreviewHandle | null>(null);

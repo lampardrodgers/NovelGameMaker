@@ -112,9 +112,9 @@ Studio / Player 的 nginx 配置来自 `nginx.static.conf`，包含 SPA fallback
 
 ```bash
 pnpm assets:studio
-pnpm --filter @agentic-galgame/studio build
+pnpm --filter @novel-game-maker/studio build
 pnpm assets:player
-pnpm --filter @agentic-galgame/player build
+pnpm --filter @novel-game-maker/player build
 ```
 
 部署目录：
@@ -131,7 +131,7 @@ Studio、API、Player 可以部署在不同域名；Player 只需要能读取 `p
 ```text
 API_HOST=0.0.0.0
 API_PORT=8787
-DATA_DIR=/var/lib/agentic-galgame
+DATA_DIR=/var/lib/novel-game-maker
 DATABASE_URL=postgres://user:password@postgres:5432/agentic_galgame
 POSTGRES_SSL=true
 CORS_ORIGIN=https://studio.example.com
@@ -156,7 +156,7 @@ AUTH_PASSWORD_BLOCKED_TERMS=password,123456,qwerty
 AUTH_MAX_FAILED_LOGIN_ATTEMPTS=5
 AUTH_LOGIN_LOCKOUT_MS=900000
 AUTH_MFA_ENABLED=true
-AUTH_MFA_ISSUER=Agentic Galgame Studio
+AUTH_MFA_ISSUER=NovelGameMaker
 AUTH_MFA_ENCRYPTION_KEY=<32+ char secret>
 AUTH_MFA_TOTP_STEP_SECONDS=30
 AUTH_MFA_TOTP_WINDOW_STEPS=1
@@ -219,7 +219,7 @@ OPENAI_IMAGE_RESPONSE_FORMAT=b64_json
 ASSET_STORAGE_PROVIDER=s3
 S3_ENDPOINT=https://<account>.r2.cloudflarestorage.com
 S3_REGION=auto
-S3_BUCKET=agentic-galgame-assets
+S3_BUCKET=novel-game-maker-assets
 S3_ACCESS_KEY_ID=<secret>
 S3_SECRET_ACCESS_KEY=<secret>
 S3_PUBLIC_BASE_URL=https://cdn.example.com
@@ -255,7 +255,7 @@ WORKER_RUN_ONCE=false
 - `STRIPE_PRICE_PRO`、`STRIPE_PRICE_STUDIO`：`pro`、`studio` 套餐对应的 Stripe recurring price id。
 - `STRIPE_API_BASE_URL`、`STRIPE_REQUEST_TIMEOUT_MS`、`STRIPE_WEBHOOK_TOLERANCE_SECONDS`：Stripe API base URL、创建 checkout 的超时时间和 webhook 签名时间窗口。
 - `API_ERROR_WEBHOOK_URL`：可选。设置后，未捕获 500 会发送 signed error webhook，用于接 Sentry relay、告警网关、飞书/Slack bot 或内部错误追踪系统。
-- `API_ERROR_WEBHOOK_SECRET`：可选。设置后 error webhook 请求会带 `x-agentic-galgame-signature: sha256=<hmac>`，签名内容是 `timestamp.body`。
+- `API_ERROR_WEBHOOK_SECRET`：可选。设置后 error webhook 请求会带 `x-novel-game-maker-signature: sha256=<hmac>`，签名内容是 `timestamp.body`。
 - `API_ERROR_WEBHOOK_TIMEOUT_MS`：error webhook 请求超时时间。默认 `5000`。
 - `AUTH_PASSWORD_MIN_LENGTH`：账号注册和密码重置的最小密码长度，默认 `8`，不能低于 `8`。
 - `AUTH_PASSWORD_REQUIRE_LETTER`：默认 `true`。设为 `false` 可关闭至少一个字母的要求。
@@ -266,7 +266,7 @@ WORKER_RUN_ONCE=false
 - `AUTH_LOGIN_LOCKOUT_MS`：账号临时锁定时长，默认 `900000`，即 15 分钟。
 - `AUTH_MFA_ENABLED`：默认 `false`。设为 `true` 后启用账号 TOTP MFA setup/confirm/disable API。
 - `AUTH_MFA_ENCRYPTION_KEY`：MFA 启用时用于 AES-GCM 加密 TOTP secret 的服务端密钥。`NODE_ENV=production` 且 `AUTH_MFA_ENABLED=true` 时必须提供至少 32 字符的非 placeholder 值。
-- `AUTH_MFA_ISSUER`、`AUTH_MFA_TOTP_STEP_SECONDS`、`AUTH_MFA_TOTP_WINDOW_STEPS`：TOTP issuer、时间步长和容忍窗口。默认 issuer 为 `Agentic Galgame Studio`，步长 30 秒，窗口 1 步。
+- `AUTH_MFA_ISSUER`、`AUTH_MFA_TOTP_STEP_SECONDS`、`AUTH_MFA_TOTP_WINDOW_STEPS`：TOTP issuer、时间步长和容忍窗口。默认 issuer 为 `NovelGameMaker`，步长 30 秒，窗口 1 步。
 - `AUTH_MFA_TRUSTED_DEVICE_TTL_DAYS`、`AUTH_MFA_MAX_TRUSTED_DEVICES`：MFA 设备记忆 token 的有效天数和每个账号保留的最大设备数。默认 30 天、10 台。
 - `AUTH_OAUTH_ENABLED`：默认 `false`。设为 `true` 后启用 `/v1/auth/oauth/start` 和 `/v1/auth/oauth/callback`。
 - `AUTH_OAUTH_PROVIDER`：`mock` 或 `oidc`。`mock` 用于本地开发和自动化验证；`oidc` 用于 Auth0、Okta、Keycloak、Google Workspace 等标准 OIDC provider。
@@ -284,14 +284,14 @@ WORKER_RUN_ONCE=false
 - `SCIM_BASE_URL`：可选。用于 SCIM User `meta.location`，建议配置为公开 HTTPS 地址，例如 `https://api.example.com/v1/scim/v2`；生产环境配置该项时必须是 HTTPS。
 - `RELEASE_APPROVAL_REQUIRED`：默认 `false`。设为 `true` 后，editor 只能提交发布审批申请，team admin/owner 或 admin token 才能直接 publish 或 approve。
 - `RELEASE_APPROVAL_WEBHOOK_URL`：可选。设置后，发布审批 request/update/comment/approve/reject/stale 会发送 signed webhook，用于接 Slack、飞书、企业微信或内部审核系统。
-- `RELEASE_APPROVAL_WEBHOOK_SECRET`：可选。设置后 webhook 请求会带 `x-agentic-galgame-signature: sha256=<hmac>`，签名内容是 `timestamp.body`。
+- `RELEASE_APPROVAL_WEBHOOK_SECRET`：可选。设置后 webhook 请求会带 `x-novel-game-maker-signature: sha256=<hmac>`，签名内容是 `timestamp.body`。
 - `RELEASE_APPROVAL_WEBHOOK_TIMEOUT_MS`：webhook 请求超时时间。默认 `5000`。
 - `TEAM_INVITATION_WEBHOOK_URL`：可选。设置后，团队邀请 create/accept/revoke/expire 会同步发送 signed webhook，用于接邮件、飞书、企业微信或内部账号系统。
-- `TEAM_INVITATION_WEBHOOK_SECRET`：可选。使用同一套 `x-agentic-galgame-signature` HMAC 签名头。
+- `TEAM_INVITATION_WEBHOOK_SECRET`：可选。使用同一套 `x-novel-game-maker-signature` HMAC 签名头。
 - `TEAM_INVITATION_WEBHOOK_TIMEOUT_MS`：团队邀请 webhook 请求超时时间。默认 `5000`。
 - `TEAM_INVITATION_ACCEPT_BASE_URL`：可选。设置后，邀请创建事件会附带 `invitationAcceptUrl=<base>?invitationToken=...`。
 - `USER_ACCOUNT_WEBHOOK_URL`：可选。设置后，邮箱验证请求、邮箱验证完成、密码重置请求和密码重置完成会发送 signed webhook，用于接邮件、IM 或内部账号系统。
-- `USER_ACCOUNT_WEBHOOK_SECRET`：可选。使用同一套 `x-agentic-galgame-signature` HMAC 签名头。
+- `USER_ACCOUNT_WEBHOOK_SECRET`：可选。使用同一套 `x-novel-game-maker-signature` HMAC 签名头。
 - `USER_ACCOUNT_WEBHOOK_TIMEOUT_MS`：账号 webhook 请求超时时间。默认 `5000`。
 - `EMAIL_VERIFICATION_BASE_URL`：可选。设置后，邮箱验证 webhook payload 会附带 `actionUrl=<base>?verificationToken=...`。
 - `PASSWORD_RESET_BASE_URL`：可选。设置后，密码重置 webhook payload 会附带 `actionUrl=<base>?resetToken=...`。
@@ -1034,10 +1034,10 @@ Studio 里对应的 `Release Diff` 面板可以刷新版本差异，`Release App
 ```text
 POST RELEASE_APPROVAL_WEBHOOK_URL
 headers:
-  x-agentic-galgame-event: release_approval_requested
-  x-agentic-galgame-delivery: <uuid>
-  x-agentic-galgame-timestamp: <iso timestamp>
-  x-agentic-galgame-signature: sha256=<hmac when secret is configured>
+  x-novel-game-maker-event: release_approval_requested
+  x-novel-game-maker-delivery: <uuid>
+  x-novel-game-maker-timestamp: <iso timestamp>
+  x-novel-game-maker-signature: sha256=<hmac when secret is configured>
 ```
 
 Webhook payload 包含 `event`、`approvalId`、`projectId`、`ownerId`、`approvalStatus`、`actor`、`commentId`、`releaseId`、`createdAt` 和有限 metadata。它不会发送评论正文、审核备注或完整项目 JSON。
@@ -1059,10 +1059,10 @@ curl -X POST http://127.0.0.1:8787/v1/notification-deliveries/run-next \
 ```text
 POST TEAM_INVITATION_WEBHOOK_URL
 headers:
-  x-agentic-galgame-event: team_invitation_created
-  x-agentic-galgame-delivery: <uuid>
-  x-agentic-galgame-timestamp: <iso timestamp>
-  x-agentic-galgame-signature: sha256=<hmac when secret is configured>
+  x-novel-game-maker-event: team_invitation_created
+  x-novel-game-maker-delivery: <uuid>
+  x-novel-game-maker-timestamp: <iso timestamp>
+  x-novel-game-maker-signature: sha256=<hmac when secret is configured>
 ```
 
 Payload 包含 `event`、`invitationId`、`teamId`、`email`、`role`、`invitedBy`、`invitedUserId`、`acceptedByUserId`、`actor`、`createdAt`、`expiresAt` 和有限 metadata。只有 `team_invitation_created` 会携带一次性 `invitationToken`；如果设置 `TEAM_INVITATION_ACCEPT_BASE_URL`，payload 还会包含 `invitationAcceptUrl`。服务端只保存 token hash，不保存明文 token。
@@ -1074,10 +1074,10 @@ Payload 包含 `event`、`invitationId`、`teamId`、`email`、`role`、`invited
 ```text
 POST USER_ACCOUNT_WEBHOOK_URL
 headers:
-  x-agentic-galgame-event: user_email_verification_requested
-  x-agentic-galgame-delivery: <uuid>
-  x-agentic-galgame-timestamp: <iso timestamp>
-  x-agentic-galgame-signature: sha256=<hmac when secret is configured>
+  x-novel-game-maker-event: user_email_verification_requested
+  x-novel-game-maker-delivery: <uuid>
+  x-novel-game-maker-timestamp: <iso timestamp>
+  x-novel-game-maker-signature: sha256=<hmac when secret is configured>
 ```
 
 Payload 包含 `event`、`userId`、`email`、`name`、`actionTokenPurpose`、`actionTokenPrefix`、`createdAt`、`expiresAt` 和有限 metadata。只有需要用户点击的 `user_email_verification_requested` 与 `user_password_reset_requested` 会携带一次性 `actionToken`；如果设置 `EMAIL_VERIFICATION_BASE_URL` 或 `PASSWORD_RESET_BASE_URL`，payload 还会包含 `actionUrl`。服务端只保存 action token hash，不保存明文 token。
@@ -1318,7 +1318,7 @@ pnpm worker:api
 Docker Compose 中包含 `worker` 服务，使用同一镜像运行：
 
 ```text
-pnpm --filter @agentic-galgame/api worker
+pnpm --filter @novel-game-maker/api worker
 ```
 
 worker 会轮询 `generation_jobs`：

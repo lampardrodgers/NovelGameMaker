@@ -3,8 +3,8 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { createProjectFromNovel } from "@agentic-galgame/vn-agent";
-import { sampleNovelText } from "@agentic-galgame/vn-core";
+import { createProjectFromNovel } from "@novel-game-maker/vn-agent";
+import { sampleNovelText } from "@novel-game-maker/vn-core";
 import {
   CloudflareCachePurgeProvider,
   PostgresAccessTokenRepository,
@@ -308,7 +308,7 @@ describe("Postgres repositories", () => {
     const call = calls[0]!;
     const headers = call.init.headers as Record<string, string>;
     const body = call.init.body as string;
-    const timestamp = headers["x-agentic-galgame-timestamp"]!;
+    const timestamp = headers["x-novel-game-maker-timestamp"]!;
     const expectedSignature = createHmac("sha256", "webhook-secret")
       .update(`${timestamp}.${body}`)
       .digest("hex");
@@ -316,8 +316,8 @@ describe("Postgres repositories", () => {
     expect(call.url).toBe("https://hooks.example.com/release-approvals");
     expect(call.init.method).toBe("POST");
     expect(JSON.parse(body)).toEqual(payload);
-    expect(headers["x-agentic-galgame-event"]).toBe("release_approval_requested");
-    expect(headers["x-agentic-galgame-signature"]).toBe(`sha256=${expectedSignature}`);
+    expect(headers["x-novel-game-maker-event"]).toBe("release_approval_requested");
+    expect(headers["x-novel-game-maker-signature"]).toBe(`sha256=${expectedSignature}`);
   });
 
   it("maps notification delivery records", async () => {
@@ -421,7 +421,7 @@ describe("Postgres repositories", () => {
     const headers = call.init.headers as Record<string, string>;
     const body = call.init.body as string;
     const parsed = JSON.parse(body) as TeamInvitationNotificationPayload;
-    const timestamp = headers["x-agentic-galgame-timestamp"]!;
+    const timestamp = headers["x-novel-game-maker-timestamp"]!;
     const expectedSignature = createHmac("sha256", "team-webhook-secret")
       .update(`${timestamp}.${body}`)
       .digest("hex");
@@ -432,8 +432,8 @@ describe("Postgres repositories", () => {
       ...payload,
       invitationAcceptUrl: "https://studio.example.com/invitations/accept?invitationToken=vni_plain_token"
     });
-    expect(headers["x-agentic-galgame-event"]).toBe("team_invitation_created");
-    expect(headers["x-agentic-galgame-signature"]).toBe(`sha256=${expectedSignature}`);
+    expect(headers["x-novel-game-maker-event"]).toBe("team_invitation_created");
+    expect(headers["x-novel-game-maker-signature"]).toBe(`sha256=${expectedSignature}`);
   });
 
   it("throws when team invitation webhook returns an error response", async () => {
@@ -482,15 +482,15 @@ describe("Postgres repositories", () => {
     const headers = call.init.headers as Record<string, string>;
     const body = call.init.body as string;
     const parsed = JSON.parse(body) as UserAccountNotificationPayload;
-    const timestamp = headers["x-agentic-galgame-timestamp"]!;
+    const timestamp = headers["x-novel-game-maker-timestamp"]!;
     const expectedSignature = createHmac("sha256", "account-webhook-secret")
       .update(`${timestamp}.${body}`)
       .digest("hex");
 
     expect(call.url).toBe("https://hooks.example.com/user-accounts");
     expect(parsed.actionUrl).toBe("https://studio.example.com/auth/verify-email?verificationToken=vne_plain_token");
-    expect(headers["x-agentic-galgame-event"]).toBe("user_email_verification_requested");
-    expect(headers["x-agentic-galgame-signature"]).toBe(`sha256=${expectedSignature}`);
+    expect(headers["x-novel-game-maker-event"]).toBe("user_email_verification_requested");
+    expect(headers["x-novel-game-maker-signature"]).toBe(`sha256=${expectedSignature}`);
   });
 
   it("throws when user account webhook returns an error response", async () => {

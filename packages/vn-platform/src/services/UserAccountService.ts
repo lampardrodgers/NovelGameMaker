@@ -43,7 +43,7 @@ const DEFAULT_ACCESS_POLICY: UserAccountAccessPolicy = {
 };
 const DEFAULT_MFA_POLICY: UserAccountMfaPolicy = {
   enabled: false,
-  issuer: "Agentic Galgame Studio",
+  issuer: "NovelGameMaker",
   totpStepSeconds: 30,
   totpWindowSteps: 1,
   trustedDeviceTtlMs: 30 * 24 * 60 * 60 * 1000,

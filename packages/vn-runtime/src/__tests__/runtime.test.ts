@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 
 import { describe, expect, it } from "vitest";
-import { createSampleProject, type CompiledBeat, type VNProject } from "@agentic-galgame/vn-core";
+import { createSampleProject, type CompiledBeat, type VNProject } from "@novel-game-maker/vn-core";
 import { MemorySaveStorage, SaveManager, VNRuntime, type VNRenderer } from "../index";
 import { DomVNRenderer } from "../DomRenderer";
 

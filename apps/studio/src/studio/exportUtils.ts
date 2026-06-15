@@ -1,4 +1,4 @@
-import type { CompiledBeat, VNProject } from "@agentic-galgame/vn-core";
+import type { CompiledBeat, VNProject } from "@novel-game-maker/vn-core";
 
 export function downloadJson(filename: string, data: unknown): void {
   downloadFile(filename, JSON.stringify(data, null, 2), "application/json;charset=utf-8");
@@ -110,7 +110,7 @@ function createStaticPlayableHtml(project: VNProject, compiledBeats: CompiledBea
         }
       } catch {}
     }
-    function saveKey() { return "agentic-galgame:player-save:" + data.project.id; }
+    function saveKey() { return "novel-game-maker:player-save:" + data.project.id; }
     function startIndex() {
       if (!data.project.startBeatId) return 0;
       const nextIndex = data.compiledBeats.findIndex((beat) => beat.beatId === data.project.startBeatId);

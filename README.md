@@ -1,6 +1,6 @@
-# Agentic Galgame Studio
+# NovelGameMaker
 
-Agentic Galgame Studio 是一个 Web 视觉小说 / Galgame 制作工具。它把小说文本导入后，通过本地 Agent 流水线生成可编辑的 `VNProject`，再用 Web Runtime 播放成传统 Galgame 风格的作品。
+NovelGameMaker 是一个 Web 视觉小说 / Galgame 制作工具。它把小说文本导入后，通过本地 Agent 流水线生成可编辑的 `VNProject`，再用 Web Runtime 播放成传统 Galgame 风格的作品。
 
 核心闭环：
 

@@ -1,5 +1,5 @@
-import { loadProjectFromJson } from "@agentic-galgame/vn-runtime";
-import type { VNProject } from "@agentic-galgame/vn-core";
+import { loadProjectFromJson } from "@novel-game-maker/vn-runtime";
+import type { VNProject } from "@novel-game-maker/vn-core";
 
 export interface ProductionProjectRecord {
   id: string;

@@ -1,4 +1,4 @@
-import { validateProject, type VNProject } from "@agentic-galgame/vn-core";
+import { validateProject, type VNProject } from "@novel-game-maker/vn-core";
 
 export function loadProjectFromJson(input: string | VNProject): VNProject {
   const project = typeof input === "string" ? (JSON.parse(input) as VNProject) : input;

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { CompiledBeat, VNProject } from "@agentic-galgame/vn-core";
-import { DomVNRenderer, loadProjectFromUrl, VNRuntime } from "@agentic-galgame/vn-runtime";
+import type { CompiledBeat, VNProject } from "@novel-game-maker/vn-core";
+import { DomVNRenderer, loadProjectFromUrl, VNRuntime } from "@novel-game-maker/vn-runtime";
 
 const defaultProjectUrl = "/project.vn.json";
 

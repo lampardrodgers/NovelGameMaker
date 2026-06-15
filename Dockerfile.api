@@ -18,7 +18,7 @@ COPY apps apps
 COPY packages packages
 COPY scripts scripts
 COPY vitest.config.ts vitest.config.ts
-RUN pnpm --filter @agentic-galgame/api... build
+RUN pnpm --filter @novel-game-maker/api... build
 
 FROM base AS runtime
 ENV NODE_ENV=production
@@ -38,4 +38,4 @@ COPY --from=build /app/packages/vn-core/dist packages/vn-core/dist
 COPY --from=build /app/packages/vn-platform/dist packages/vn-platform/dist
 COPY --from=build /app/packages/vn-platform/migrations packages/vn-platform/migrations
 EXPOSE 8787
-CMD ["pnpm", "--filter", "@agentic-galgame/api", "start"]
+CMD ["pnpm", "--filter", "@novel-game-maker/api", "start"]

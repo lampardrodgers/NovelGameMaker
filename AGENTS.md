@@ -2,7 +2,7 @@
 
 ## 项目定位
 
-这个仓库要实现一个 **Agentic Galgame Studio**。
+这个仓库要实现一个 **NovelGameMaker**。
 
 它是一个 Web 视觉小说 / Galgame 框架，可以把小说文本导入后，通过本地 Agent 流水线拆解成可编辑、可预览、可导出、可在 Web 上游玩的视觉小说。
 

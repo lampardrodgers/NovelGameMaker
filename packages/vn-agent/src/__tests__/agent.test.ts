@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resolveBeats, sampleNovelText, validateProject } from "@agentic-galgame/vn-core";
+import { resolveBeats, sampleNovelText, validateProject } from "@novel-game-maker/vn-core";
 import {
   applyGeneratedAssetManifest,
   cleanNovelText,

@@ -1,4 +1,4 @@
-import type { CompiledBeat, StageRenderMode, VNBeat, VNProject } from "@agentic-galgame/vn-core";
+import type { CompiledBeat, StageRenderMode, VNBeat, VNProject } from "@novel-game-maker/vn-core";
 import {
   getFirstSpeaker,
   updateBeatLine,

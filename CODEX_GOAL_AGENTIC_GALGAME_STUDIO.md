@@ -1,8 +1,8 @@
-# Codex Goal: Agentic Galgame Studio MVP
+# Codex Goal: NovelGameMaker MVP
 
 ## 0. 项目使命
 
-请实现一个可运行的 **Agentic Galgame Studio MVP**。
+请实现一个可运行的 **NovelGameMaker MVP**。
 
 这个项目不是普通小说阅读器，也不是聊天式互动小说，而是一个可以把小说文本转成 Web 视觉小说 / Galgame 的框架。
 

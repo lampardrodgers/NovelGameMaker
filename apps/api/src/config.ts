@@ -11,7 +11,7 @@ import type {
   TeamMemberRole,
   UserAccountAccessPolicy,
   UserAccountMfaPolicy
-} from "@agentic-galgame/vn-platform";
+} from "@novel-game-maker/vn-platform";
 
 export interface ApiConfig {
   host: string;
@@ -255,7 +255,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): ApiConfig {
     },
     userAccountMfaPolicy: {
       enabled: env.AUTH_MFA_ENABLED === "true",
-      issuer: env.AUTH_MFA_ISSUER?.trim() || "Agentic Galgame Studio",
+      issuer: env.AUTH_MFA_ISSUER?.trim() || "NovelGameMaker",
 	      secretEncryptionKey: emptyToUndefined(env.AUTH_MFA_ENCRYPTION_KEY),
 	      totpStepSeconds: parsePositiveInteger(env.AUTH_MFA_TOTP_STEP_SECONDS, 30),
 	      totpWindowSteps: parseNonNegativeInteger(env.AUTH_MFA_TOTP_WINDOW_STEPS, 1),

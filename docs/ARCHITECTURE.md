@@ -1,4 +1,4 @@
-# Agentic Galgame Studio 架构
+# NovelGameMaker 架构
 
 ## VN Core Protocol
 
@@ -466,7 +466,7 @@ worker 职责：
 - 输出结构化 lifecycle/job/notification 日志。
 - 支持 `WORKER_RUN_ONCE=true` 做 smoke 或 CI。
 
-Docker Compose 中的 `worker` 服务使用同一 API 镜像，通过 `pnpm --filter @agentic-galgame/api worker` 启动。`studio` 和 `player` 使用独立静态镜像。正式部署时，API、worker、Studio 和 Player 可以分别扩容或放到不同域名/CDN。
+Docker Compose 中的 `worker` 服务使用同一 API 镜像，通过 `pnpm --filter @novel-game-maker/api worker` 启动。`studio` 和 `player` 使用独立静态镜像。正式部署时，API、worker、Studio 和 Player 可以分别扩容或放到不同域名/CDN。
 
 ## Database Schema
 

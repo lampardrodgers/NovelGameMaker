@@ -3,7 +3,7 @@ import {
   validateProject,
   type CompiledBeat,
   type VNProject
-} from "@agentic-galgame/vn-core";
+} from "@novel-game-maker/vn-core";
 import type { VNRenderer } from "./Renderer.js";
 import { SaveManager } from "./SaveManager.js";
 

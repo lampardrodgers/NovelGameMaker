@@ -1,4 +1,4 @@
-import type { VNProject } from "@agentic-galgame/vn-core";
+import type { VNProject } from "@novel-game-maker/vn-core";
 
 export type ProjectSource = "imported_novel" | "uploaded_project" | "api";
 export type JobKind = "novel_to_project" | "asset_generation";

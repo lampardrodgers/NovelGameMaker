@@ -2,8 +2,8 @@ import { mkdtemp, readFile, stat } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { describe, expect, it } from "vitest";
-import { sampleNovelText, validateProject } from "@agentic-galgame/vn-core";
-import { createProjectFromNovel } from "@agentic-galgame/vn-agent";
+import { sampleNovelText, validateProject } from "@novel-game-maker/vn-core";
+import { createProjectFromNovel } from "@novel-game-maker/vn-agent";
 import { exportStaticBundle } from "../exportStaticBundle";
 
 describe("exportStaticBundle", () => {

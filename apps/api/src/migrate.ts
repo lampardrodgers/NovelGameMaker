@@ -2,7 +2,7 @@ import { resolve } from "node:path";
 import {
   NodePostgresExecutor,
   runPostgresMigrations
-} from "@agentic-galgame/vn-platform";
+} from "@novel-game-maker/vn-platform";
 import { loadConfig } from "./config.js";
 
 const config = loadConfig();

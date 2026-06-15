@@ -115,12 +115,12 @@ assert(envExample.includes("VITE_ASSET_JOB_POLL_ATTEMPTS=60"), "env example incl
 const apiDockerfile = await assertFile("Dockerfile.api", "API Dockerfile exists");
 assert(apiDockerfile.includes("packages/vn-platform/migrations"), "API Docker image includes Postgres migration SQL files");
 const studioDockerfile = await assertFile("Dockerfile.studio", "Studio Dockerfile exists");
-assert(studioDockerfile.includes("@agentic-galgame/studio... build"), "Studio Docker image builds only Studio and dependencies");
+assert(studioDockerfile.includes("@novel-game-maker/studio... build"), "Studio Docker image builds only Studio and dependencies");
 assert(studioDockerfile.includes("VITE_API_BASE_URL"), "Studio Docker image accepts public API build arg");
 assert(studioDockerfile.includes("nginx.static.conf"), "Studio Docker image serves static files with shared nginx config");
 assert(studioDockerfile.includes("packages/vn-exporter/package.json"), "Studio Docker deps include root workspace package manifests");
 const playerDockerfile = await assertFile("Dockerfile.player", "Player Dockerfile exists");
-assert(playerDockerfile.includes("@agentic-galgame/player... build"), "Player Docker image builds only Player and dependencies");
+assert(playerDockerfile.includes("@novel-game-maker/player... build"), "Player Docker image builds only Player and dependencies");
 assert(playerDockerfile.includes("nginx.static.conf"), "Player Docker image serves static files with shared nginx config");
 assert(playerDockerfile.includes("packages/vn-exporter/package.json"), "Player Docker deps include root workspace package manifests");
 const nginxStatic = await assertFile("nginx.static.conf", "static nginx config exists");
@@ -192,7 +192,7 @@ const apiPackage = await assertFile("apps/api/package.json", "API app package ex
 assert(apiPackage.includes("\"worker\""), "API app worker script exists");
 assert(apiPackage.includes("\"migrate\""), "API app migration script exists");
 assert(apiPackage.includes("\"migrate:dist\""), "API app dist migration script exists");
-assert(apiPackage.includes("@agentic-galgame/vn-agent"), "API app depends on vn-agent provider package");
+assert(apiPackage.includes("@novel-game-maker/vn-agent"), "API app depends on vn-agent provider package");
 const apiConfig = await assertFile("apps/api/src/config.ts", "API config exists");
 assert(apiConfig.includes("NODE_ENV=production requires API_AUTH_TOKEN"), "API enforces production auth token");
 assert(apiConfig.includes("API_PUBLIC_BASE_URL"), "API config supports public API base URL");
@@ -439,10 +439,10 @@ assert(operationsService.includes("getOwnerSummary"), "operations service can su
 assert(operationsService.includes("incidents"), "operations service reports production incidents");
 assert(operationsService.includes("content_safety"), "operations service includes content safety incidents");
 const releaseApprovalNotifier = await assertFile("packages/vn-platform/src/notifications/WebhookReleaseApprovalNotifier.ts", "release approval webhook notifier exists");
-assert(releaseApprovalNotifier.includes("x-agentic-galgame-signature"), "release approval webhook notifier signs payloads");
+assert(releaseApprovalNotifier.includes("x-novel-game-maker-signature"), "release approval webhook notifier signs payloads");
 assert(releaseApprovalNotifier.includes("AbortController"), "release approval webhook notifier supports timeout");
 const teamInvitationNotifier = await assertFile("packages/vn-platform/src/notifications/WebhookTeamInvitationNotifier.ts", "team invitation webhook notifier exists");
-assert(teamInvitationNotifier.includes("x-agentic-galgame-signature"), "team invitation webhook notifier signs payloads");
+assert(teamInvitationNotifier.includes("x-novel-game-maker-signature"), "team invitation webhook notifier signs payloads");
 assert(teamInvitationNotifier.includes("invitationAcceptUrl"), "team invitation webhook notifier can include accept URLs");
 assert(teamInvitationNotifier.includes("AbortController"), "team invitation webhook notifier supports timeout");
 await assertFile("packages/vn-platform/src/deployment/CloudflareCachePurgeProvider.ts", "Cloudflare cache purge provider exists");
@@ -537,7 +537,7 @@ assert(oauthService.includes("oauth_group_role_mapping_applied"), "OAuth service
 assert(oauthService.includes("readOptionalStringListProperty"), "OAuth service can read OIDC group claims");
 assert(oauthService.includes("oauth_login_completed"), "OAuth service audits completed SSO login");
 const userAccountNotifier = await assertFile("packages/vn-platform/src/notifications/WebhookUserAccountNotifier.ts", "user account webhook notifier exists");
-assert(userAccountNotifier.includes("x-agentic-galgame-signature"), "user account webhook notifier signs payloads");
+assert(userAccountNotifier.includes("x-novel-game-maker-signature"), "user account webhook notifier signs payloads");
 assert(userAccountNotifier.includes("emailVerificationBaseUrl"), "user account webhook notifier can include verification URLs");
 assert(userAccountNotifier.includes("passwordResetBaseUrl"), "user account webhook notifier can include password reset URLs");
 assert(userAccountNotifier.includes("AbortController"), "user account webhook notifier supports timeout");
@@ -697,7 +697,7 @@ assert(studioApp.includes("reviewContentSafety"), "Studio can run manual content
 assert(studioApp.includes("TeamInvitationPanel"), "Studio renders team invitation panel");
 assert(studioApp.includes("createTeamInvitation"), "Studio can create team invitations");
 assert(studioApp.includes("AccountPanel"), "Studio renders account panel");
-assert(studioApp.includes("agentic-galgame-studio:account-session"), "Studio persists account session locally");
+assert(studioApp.includes("novel-game-maker:account-session"), "Studio persists account session locally");
 assert(studioApp.includes("requestAccountPasswordReset"), "Studio can request password reset");
 assert(studioApp.includes("refreshAccountSessions"), "Studio can refresh account sessions");
 assert(studioApp.includes("revokeAccountSession"), "Studio can revoke account sessions");
@@ -714,7 +714,7 @@ assert(studioApp.includes("cancelBillingSubscription"), "Studio can cancel billi
 assert(studioApp.includes("listBillingEvents"), "Studio can refresh billing events");
 assert(studioApp.includes("startAccountMfaTotpSetup"), "Studio can start account MFA setup");
 assert(studioApp.includes("regenerateAccountMfaRecoveryCodes"), "Studio can regenerate account MFA recovery codes");
-assert(studioApp.includes("agentic-galgame-studio:mfa-device-token"), "Studio persists MFA device token locally");
+assert(studioApp.includes("novel-game-maker:mfa-device-token"), "Studio persists MFA device token locally");
 assert(studioApp.includes("revokeAccountMfaTrustedDevices"), "Studio can revoke account MFA trusted devices");
 const migration = await assertFile("packages/vn-platform/migrations/0001_production_schema.sql", "production DB migration exists");
 assert(migration.includes("studio_projects"), "migration includes studio_projects table");
@@ -984,8 +984,8 @@ assert(studioTests.includes("MFA recovery codes"), "Studio tests cover MFA recov
 assert(studioTests.includes("Remember MFA device"), "Studio tests cover MFA trusted device checkbox");
 assert(studioTests.includes("Forget Devices"), "Studio tests cover MFA trusted device revocation UI");
 const playerPackage = await assertFile("apps/player/package.json", "Player app package exists");
-assert(playerPackage.includes("@agentic-galgame/vn-runtime"), "Player app depends on vn-runtime");
-assert(!playerPackage.includes("@agentic-galgame/vn-agent"), "Player app does not depend on vn-agent");
+assert(playerPackage.includes("@novel-game-maker/vn-runtime"), "Player app depends on vn-runtime");
+assert(!playerPackage.includes("@novel-game-maker/vn-agent"), "Player app does not depend on vn-agent");
 const playerApp = await assertFile("apps/player/src/PlayerApp.tsx", "Player app exists");
 assert(playerApp.includes("loadProjectFromUrl"), "Player app loads VNProject by URL");
 assert(playerApp.includes("projectUrl"), "Player app supports projectUrl query parameter");

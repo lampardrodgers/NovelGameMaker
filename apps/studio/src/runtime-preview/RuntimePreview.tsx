@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
-import type { CompiledBeat, VNProject } from "@agentic-galgame/vn-core";
-import { DomVNRenderer, VNRuntime } from "@agentic-galgame/vn-runtime";
+import type { CompiledBeat, VNProject } from "@novel-game-maker/vn-core";
+import { DomVNRenderer, VNRuntime } from "@novel-game-maker/vn-runtime";
 
 interface RuntimePreviewProps {
   project: VNProject;

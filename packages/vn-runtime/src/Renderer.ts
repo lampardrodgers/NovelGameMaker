@@ -1,4 +1,4 @@
-import type { CompiledBeat, VNProject } from "@agentic-galgame/vn-core";
+import type { CompiledBeat, VNProject } from "@novel-game-maker/vn-core";
 
 export interface VNRuntimeControls {
   next(): void;

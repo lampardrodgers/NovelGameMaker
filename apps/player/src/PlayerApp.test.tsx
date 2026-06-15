@@ -3,7 +3,7 @@
 import "@testing-library/jest-dom/vitest";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { createSampleProject } from "@agentic-galgame/vn-core";
+import { createSampleProject } from "@novel-game-maker/vn-core";
 import { PlayerApp } from "./PlayerApp";
 
 describe("PlayerApp", () => {

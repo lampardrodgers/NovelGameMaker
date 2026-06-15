@@ -1,4 +1,4 @@
-import type { VNProject } from "@agentic-galgame/vn-core";
+import type { VNProject } from "@novel-game-maker/vn-core";
 
 interface StudioToolbarProps {
   project: VNProject;

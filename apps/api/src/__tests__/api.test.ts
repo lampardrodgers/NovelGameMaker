@@ -4,9 +4,9 @@ import { createServer } from "node:http";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { sampleNovelText, type VNProject } from "@agentic-galgame/vn-core";
-import { createProjectFromNovel } from "@agentic-galgame/vn-agent";
-import { createPlatform, type VNPlatform } from "@agentic-galgame/vn-platform";
+import { sampleNovelText, type VNProject } from "@novel-game-maker/vn-core";
+import { createProjectFromNovel } from "@novel-game-maker/vn-agent";
+import { createPlatform, type VNPlatform } from "@novel-game-maker/vn-platform";
 import { createApiServer } from "../server";
 import { loadConfig, type ApiConfig } from "../config";
 
@@ -142,13 +142,13 @@ describe("api server", () => {
       requestId: string;
       errorMessage: string;
     };
-    const timestamp = String(call.headers["x-agentic-galgame-timestamp"]);
+    const timestamp = String(call.headers["x-novel-game-maker-timestamp"]);
     const expectedSignature = createHmac("sha256", "error-webhook-secret")
       .update(`${timestamp}.${call.body}`)
       .digest("hex");
 
-    expect(call.headers["x-agentic-galgame-event"]).toBe("api_server_error");
-    expect(call.headers["x-agentic-galgame-signature"]).toBe(`sha256=${expectedSignature}`);
+    expect(call.headers["x-novel-game-maker-event"]).toBe("api_server_error");
+    expect(call.headers["x-novel-game-maker-signature"]).toBe(`sha256=${expectedSignature}`);
     expect(payload.event).toBe("api_server_error");
     expect(payload.route).toBe("/v1/projects/:id");
     expect(payload.requestId).toBeTruthy();
@@ -849,7 +849,7 @@ describe("api server", () => {
       const url = await startTestServer({
         userAccountMfaPolicy: {
           enabled: true,
-	          issuer: "Agentic Galgame Studio Test",
+	          issuer: "NovelGameMaker Test",
 	          secretEncryptionKey: "test-mfa-encryption-key-at-least-32-bytes",
 	          totpStepSeconds: 30,
 	          totpWindowSteps: 1,
@@ -1025,7 +1025,7 @@ describe("api server", () => {
       sessionToken: string;
       user: { id: string; emailVerifiedAt?: string; passwordHash?: string };
     };
-    const verificationCall = webhook.calls.find((call) => call.headers["x-agentic-galgame-event"] === "user_email_verification_requested")!;
+    const verificationCall = webhook.calls.find((call) => call.headers["x-novel-game-maker-event"] === "user_email_verification_requested")!;
     const verificationPayload = JSON.parse(verificationCall.body) as {
       actionToken?: string;
       actionUrl?: string;
@@ -1049,7 +1049,7 @@ describe("api server", () => {
       })
     });
     const resetRequest = await resetRequestResponse.json() as { ok: boolean; resetToken?: string };
-    const resetCall = webhook.calls.find((call) => call.headers["x-agentic-galgame-event"] === "user_password_reset_requested")!;
+    const resetCall = webhook.calls.find((call) => call.headers["x-novel-game-maker-event"] === "user_password_reset_requested")!;
     const resetPayload = JSON.parse(resetCall.body) as {
       actionToken?: string;
       actionUrl?: string;
@@ -1155,7 +1155,7 @@ describe("api server", () => {
       invitationAcceptUrl?: string;
       tokenHash?: string;
     };
-    const timestamp = String(call.headers["x-agentic-galgame-timestamp"]);
+    const timestamp = String(call.headers["x-novel-game-maker-timestamp"]);
     const expectedSignature = createHmac("sha256", "team-webhook-secret")
       .update(`${timestamp}.${call.body}`)
       .digest("hex");
@@ -1170,8 +1170,8 @@ describe("api server", () => {
       `https://studio.example.com/invitations/accept?invitationToken=${encodeURIComponent(created.invitationToken)}`
     );
     expect(parsed.tokenHash).toBeUndefined();
-    expect(call.headers["x-agentic-galgame-event"]).toBe("team_invitation_created");
-    expect(call.headers["x-agentic-galgame-signature"]).toBe(`sha256=${expectedSignature}`);
+    expect(call.headers["x-novel-game-maker-event"]).toBe("team_invitation_created");
+    expect(call.headers["x-novel-game-maker-signature"]).toBe(`sha256=${expectedSignature}`);
   });
 
   it("creates, uses, lists, and revokes hashed access tokens", async () => {
@@ -1541,7 +1541,7 @@ describe("api server", () => {
       AUTH_OAUTH_PROVIDER: "oidc",
       AUTH_OAUTH_REDIRECT_URI: "https://api.example.com/v1/auth/oauth/callback",
       AUTH_OAUTH_ISSUER: "https://idp.example.com",
-      AUTH_OAUTH_CLIENT_ID: "agentic-galgame",
+      AUTH_OAUTH_CLIENT_ID: "novel-game-maker",
       AUTH_OAUTH_CLIENT_SECRET: "oauth-client-secret-000000",
       AUTH_OAUTH_AUTHORIZATION_URL: "https://idp.example.com/oauth2/v1/authorize",
       AUTH_OAUTH_TOKEN_URL: "https://idp.example.com/oauth2/v1/token",
@@ -1570,7 +1570,7 @@ describe("api server", () => {
       mockAuthorizationBaseUrl: undefined,
       oidc: {
         issuer: "https://idp.example.com",
-        clientId: "agentic-galgame",
+        clientId: "novel-game-maker",
         clientSecret: "oauth-client-secret-000000",
         authorizationUrl: "https://idp.example.com/oauth2/v1/authorize",
         tokenUrl: "https://idp.example.com/oauth2/v1/token",
@@ -1595,7 +1595,7 @@ describe("api server", () => {
       AUTH_OAUTH_ENABLED: "true",
       AUTH_OAUTH_PROVIDER: "oidc",
       AUTH_OAUTH_REDIRECT_URI: "https://api.example.com/v1/auth/oauth/callback",
-      AUTH_OAUTH_CLIENT_ID: "agentic-galgame",
+      AUTH_OAUTH_CLIENT_ID: "novel-game-maker",
       AUTH_OAUTH_CLIENT_SECRET: "short",
       AUTH_OAUTH_AUTHORIZATION_URL: "https://idp.example.com/authorize",
       AUTH_OAUTH_TOKEN_URL: "https://idp.example.com/token",
@@ -2861,7 +2861,7 @@ async function startTestServer(overrides: Partial<ApiConfig> = {}, platform?: VN
     },
     userAccountMfaPolicy: {
       enabled: false,
-      issuer: "Agentic Galgame Studio",
+      issuer: "NovelGameMaker",
 	      secretEncryptionKey: undefined,
 	      totpStepSeconds: 30,
 	      totpWindowSteps: 1,

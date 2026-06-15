@@ -4,7 +4,7 @@ import type {
   StagePatch,
   VNBeat,
   VNLine
-} from "@agentic-galgame/vn-core";
+} from "@novel-game-maker/vn-core";
 
 export function chooseBackgroundId(sceneText: string): string {
   if (sceneText.includes("实验室")) {

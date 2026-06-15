@@ -27,13 +27,13 @@ export class WebhookReleaseApprovalNotifier implements ReleaseApprovalNotifier {
     const timestamp = new Date().toISOString();
     const headers: Record<string, string> = {
       "content-type": "application/json",
-      "user-agent": "agentic-galgame-studio/0.1",
-      "x-agentic-galgame-event": input.event,
-      "x-agentic-galgame-delivery": randomUUID(),
-      "x-agentic-galgame-timestamp": timestamp
+      "user-agent": "novel-game-maker/0.1",
+      "x-novel-game-maker-event": input.event,
+      "x-novel-game-maker-delivery": randomUUID(),
+      "x-novel-game-maker-timestamp": timestamp
     };
     if (this.options.secret) {
-      headers["x-agentic-galgame-signature"] = `sha256=${signBody(this.options.secret, timestamp, body)}`;
+      headers["x-novel-game-maker-signature"] = `sha256=${signBody(this.options.secret, timestamp, body)}`;
     }
 
     const controller = new AbortController();

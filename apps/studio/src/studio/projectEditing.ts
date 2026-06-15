@@ -6,7 +6,7 @@ import type {
   VNBeat,
   VNLine,
   VNProject
-} from "@agentic-galgame/vn-core";
+} from "@novel-game-maker/vn-core";
 
 export interface BeatTreeItem {
   index: number;

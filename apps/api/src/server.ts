@@ -25,8 +25,8 @@ import {
   type UserAccountRecord,
   type UserSessionRecord,
   type VNPlatform
-} from "@agentic-galgame/vn-platform";
-import type { VNProject } from "@agentic-galgame/vn-core";
+} from "@novel-game-maker/vn-platform";
+import type { VNProject } from "@novel-game-maker/vn-core";
 import type { ApiConfig } from "./config.js";
 import { createApiPlatform } from "./platform.js";
 
@@ -107,7 +107,7 @@ export function createApiServer(options: ApiServerOptions): Server {
       if (request.method === "GET" && url.pathname === "/health") {
         sendJson(response, 200, {
           ok: true,
-          service: "agentic-galgame-api"
+          service: "novel-game-maker-api"
         });
         return;
       }
@@ -1467,13 +1467,13 @@ async function postErrorWebhook(
   const timestamp = new Date().toISOString();
   const headers: Record<string, string> = {
     "content-type": "application/json",
-    "user-agent": "agentic-galgame-studio/0.1",
-    "x-agentic-galgame-event": "api_server_error",
-    "x-agentic-galgame-delivery": randomUUID(),
-    "x-agentic-galgame-timestamp": timestamp
+    "user-agent": "novel-game-maker/0.1",
+    "x-novel-game-maker-event": "api_server_error",
+    "x-novel-game-maker-delivery": randomUUID(),
+    "x-novel-game-maker-timestamp": timestamp
   };
   if (webhook.secret) {
-    headers["x-agentic-galgame-signature"] = `sha256=${signBody(webhook.secret, timestamp, body)}`;
+    headers["x-novel-game-maker-signature"] = `sha256=${signBody(webhook.secret, timestamp, body)}`;
   }
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), webhook.timeoutMs);

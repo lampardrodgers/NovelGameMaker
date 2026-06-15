@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import type { VNAsset, VNBeat, VNProject } from "@agentic-galgame/vn-core";
+import type { VNAsset, VNBeat, VNProject } from "@novel-game-maker/vn-core";
 import type {
   ProjectReleaseAssetSummary,
   ProjectReleaseBeatSummary,

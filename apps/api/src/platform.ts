@@ -3,8 +3,8 @@ import {
   createOpenAIImageGenerationProviderFromEnv,
   createOpenAITextModelProviderFromEnv,
   createProjectFromNovel
-} from "@agentic-galgame/vn-agent";
-import { validateProject, type VNProject } from "@agentic-galgame/vn-core";
+} from "@novel-game-maker/vn-agent";
+import { validateProject, type VNProject } from "@novel-game-maker/vn-core";
 import {
   CloudflareCachePurgeProvider,
   createPlatform,
@@ -45,7 +45,7 @@ import {
   type BillingCheckoutProvider,
   type PlatformRepositories,
   type VNPlatform
-} from "@agentic-galgame/vn-platform";
+} from "@novel-game-maker/vn-platform";
 import type { ApiConfig } from "./config.js";
 
 export function createApiPlatform(config: ApiConfig): VNPlatform {

@@ -1,4 +1,4 @@
-import type { VNProject } from "@agentic-galgame/vn-core";
+import type { VNProject } from "@novel-game-maker/vn-core";
 import type { VNAgentWorkflow } from "../providers/interfaces.js";
 import { createProjectFromNovel, type CreateProjectFromNovelInput } from "./createProjectFromNovel.js";
 

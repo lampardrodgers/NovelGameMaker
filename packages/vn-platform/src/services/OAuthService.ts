@@ -277,7 +277,7 @@ export class MockOAuthLoginProvider implements OAuthLoginProvider {
   }): string {
     const url = new URL(this.authorizationBaseUrl);
     url.searchParams.set("response_type", "code");
-    url.searchParams.set("client_id", "mock-agentic-galgame");
+    url.searchParams.set("client_id", "mock-novel-game-maker");
     url.searchParams.set("redirect_uri", input.redirectUri);
     url.searchParams.set("state", input.state);
     if (input.codeChallenge) {

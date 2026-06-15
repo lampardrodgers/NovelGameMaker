@@ -1,4 +1,4 @@
-import type { DisplayText } from "@agentic-galgame/vn-core";
+import type { DisplayText } from "@novel-game-maker/vn-core";
 
 export function formatTextboxText(displayText: DisplayText): {
   speakerName?: string;

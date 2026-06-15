@@ -1,4 +1,4 @@
-import type { CharacterProfile, VNLine } from "@agentic-galgame/vn-core";
+import type { CharacterProfile, VNLine } from "@novel-game-maker/vn-core";
 
 export const UNKNOWN_SPEAKER_ID = "unknown_speaker";
 

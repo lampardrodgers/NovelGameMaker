@@ -80,7 +80,7 @@ export class StripeBillingCheckoutProvider implements BillingCheckoutProvider {
         headers: {
           authorization: `Bearer ${this.options.secretKey}`,
           "content-type": "application/x-www-form-urlencoded",
-          "user-agent": "agentic-galgame-studio/0.1"
+          "user-agent": "novel-game-maker/0.1"
         },
         body,
         signal: controller.signal
@@ -138,7 +138,7 @@ export class StripeBillingCheckoutProvider implements BillingCheckoutProvider {
         headers: {
           authorization: `Bearer ${this.options.secretKey}`,
           "content-type": "application/x-www-form-urlencoded",
-          "user-agent": "agentic-galgame-studio/0.1"
+          "user-agent": "novel-game-maker/0.1"
         },
         body,
         signal: controller.signal

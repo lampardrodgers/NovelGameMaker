@@ -1,5 +1,5 @@
-import { createProjectFromNovel } from "@agentic-galgame/vn-agent";
-import { validateProject, type VNProject } from "@agentic-galgame/vn-core";
+import { createProjectFromNovel } from "@novel-game-maker/vn-agent";
+import { validateProject, type VNProject } from "@novel-game-maker/vn-core";
 import type {
   CreateProjectFromNovelRequest,
   NovelProjectGenerator,

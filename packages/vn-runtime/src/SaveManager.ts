@@ -35,7 +35,7 @@ export class SaveManager {
 
   constructor(input: { storage?: SaveStorage; namespace?: string } = {}) {
     this.storage = input.storage ?? getDefaultStorage();
-    this.namespace = input.namespace ?? "agentic-galgame";
+    this.namespace = input.namespace ?? "novel-game-maker";
   }
 
   save(slot: string, data: VNSaveData): void {
