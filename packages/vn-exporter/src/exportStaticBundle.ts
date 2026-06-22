@@ -1,5 +1,6 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { constants } from "node:fs";
+import { access, cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { dirname, join } from "node:path";
 import type { VNProject } from "@novel-game-maker/vn-core";
 import { createPlayableHtml } from "./createPlayableHtml.js";
 import { createPlaceholderSvg } from "./placeholderSvg.js";
@@ -7,6 +8,7 @@ import { createPlaceholderSvg } from "./placeholderSvg.js";
 export async function exportStaticBundle(input: {
   project: VNProject;
   outDir: string;
+  assetSourceDir?: string;
   runtimeBundle?: string;
 }): Promise<void> {
   await rm(input.outDir, { recursive: true, force: true });
@@ -34,12 +36,27 @@ export async function exportStaticBundle(input: {
   );
 
   for (const asset of projectForExport.assets.items) {
-    if (asset.placeholder || asset.src.endsWith(".svg")) {
-      await writeFile(
-        join(input.outDir, asset.src),
-        createPlaceholderSvg(asset, projectForExport),
-        "utf-8"
-      );
+    const outPath = join(input.outDir, asset.src);
+    const sourcePath = input.assetSourceDir ? join(input.assetSourceDir, asset.src) : undefined;
+
+    await mkdir(dirname(outPath), { recursive: true });
+
+    if (sourcePath && await pathExists(sourcePath)) {
+      await cp(sourcePath, outPath, { force: true });
+      continue;
     }
+
+    if (asset.placeholder || asset.src.endsWith(".svg")) {
+      await writeFile(outPath, createPlaceholderSvg(asset, projectForExport), "utf-8");
+    }
+  }
+}
+
+async function pathExists(path: string): Promise<boolean> {
+  try {
+    await access(path, constants.F_OK);
+    return true;
+  } catch {
+    return false;
   }
 }

@@ -13,8 +13,16 @@ MVP 默认不接真实 AI API，不需要数据库、登录、支付或云服务
 ## 快速开始
 
 ```bash
+corepack enable
 pnpm install
 pnpm dev
+```
+
+如果 Windows 终端提示 `pnpm` 不是可识别命令，可以直接把命令写成：
+
+```powershell
+corepack pnpm install
+corepack pnpm dev
 ```
 
 打开 Studio：
@@ -36,6 +44,13 @@ pnpm test           # 运行测试
 pnpm typecheck      # TypeScript 类型检查
 pnpm build          # 构建 app 和 package
 pnpm export:sample  # 导出 sample playable
+```
+
+Windows 用户也可以用 `corepack pnpm <script>` 运行同一组命令，例如：
+
+```powershell
+corepack pnpm build
+corepack pnpm export:sample
 ```
 
 导出 sample 后，可用静态服务器打开：
@@ -98,6 +113,26 @@ samples/fog-name-village/
 ```
 
 它包含线性化 `project.vn.json`、原始小说文本、可替换占位背景/立绘/证据图，以及 Key、证据、人物、流程节点等结构化源数据，适合验证更长剧情导入和后续分支系统设计。
+
+同步雾名村到独立 Player：
+
+```bash
+pnpm assets:player -- fog-name-village
+pnpm dev:player
+```
+
+或在 Windows 上：
+
+```powershell
+corepack pnpm assets:player -- fog-name-village
+corepack pnpm dev:player
+```
+
+直接导出雾名村 playable：
+
+```bash
+pnpm export:fog
+```
 
 ## 生产化入口
 

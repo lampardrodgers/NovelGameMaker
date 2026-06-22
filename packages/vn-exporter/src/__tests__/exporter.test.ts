@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, stat } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, stat, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { describe, expect, it } from "vitest";
@@ -36,5 +36,38 @@ describe("exportStaticBundle", () => {
     await expect(stat(join(outDir, "assets/sprite_lin_xue.svg"))).resolves.toBeTruthy();
     await expect(stat(join(outDir, "assets/sprite_unknown.svg"))).resolves.toBeTruthy();
     await expect(stat(join(outDir, "assets/cg_phone_screen.svg"))).resolves.toBeTruthy();
+  });
+
+  it("copies existing local assets before falling back to placeholders", async () => {
+    const outDir = await mkdtemp(join(tmpdir(), "vn-export-"));
+    const assetSourceDir = await mkdtemp(join(tmpdir(), "vn-assets-"));
+    const imagePath = join(assetSourceDir, "assets/backgrounds/bg_lab_night.jpg");
+    const project = createProjectFromNovel({
+      title: "实验室里的蓝光",
+      novelText: sampleNovelText
+    });
+    const projectWithLocalAsset = {
+      ...project,
+      assets: {
+        items: project.assets.items.map((asset) =>
+          asset.id === "bg_lab_night"
+            ? { ...asset, src: "assets/backgrounds/bg_lab_night.jpg", placeholder: true }
+            : asset
+        )
+      }
+    };
+
+    await mkdir(join(assetSourceDir, "assets/backgrounds"), { recursive: true });
+    await writeFile(imagePath, "local image bytes", "utf-8");
+
+    await exportStaticBundle({
+      project: projectWithLocalAsset,
+      outDir,
+      assetSourceDir
+    });
+
+    await expect(readFile(join(outDir, "assets/backgrounds/bg_lab_night.jpg"), "utf-8"))
+      .resolves
+      .toBe("local image bytes");
   });
 });
