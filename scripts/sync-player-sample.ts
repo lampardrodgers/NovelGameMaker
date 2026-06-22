@@ -1,31 +1,10 @@
-import { mkdir, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
-import { createProjectFromNovel } from "@novel-game-maker/vn-agent";
-import { sampleNovelText } from "@novel-game-maker/vn-core";
-import { createPlaceholderSvg } from "@novel-game-maker/vn-exporter";
+import { resolve } from "node:path";
+import { loadSampleProject, readSampleSlug, syncProjectToPublic } from "./sample-utils.js";
 
 const rootDir = resolve(import.meta.dirname, "..");
-const project = createProjectFromNovel({
-  title: "实验室里的蓝光",
-  novelText: sampleNovelText
-});
+const sample = await loadSampleProject(rootDir, readSampleSlug());
 const playerPublicDir = resolve(rootDir, "apps/player/public");
 
-await mkdir(playerPublicDir, { recursive: true });
-await writeFile(
-  resolve(playerPublicDir, "project.vn.json"),
-  JSON.stringify(project, null, 2),
-  "utf-8"
-);
+await syncProjectToPublic(sample, playerPublicDir, { writeProjectJson: true });
 
-for (const asset of project.assets.items) {
-  if (!asset.src.startsWith("assets/") || !asset.src.endsWith(".svg")) {
-    continue;
-  }
-
-  const outPath = resolve(playerPublicDir, asset.src);
-  await mkdir(dirname(outPath), { recursive: true });
-  await writeFile(outPath, createPlaceholderSvg(asset, project), "utf-8");
-}
-
-console.log("Synced Player sample project and scene assets to apps/player/public");
+console.log(`Synced Player sample "${sample.slug}" to apps/player/public`);

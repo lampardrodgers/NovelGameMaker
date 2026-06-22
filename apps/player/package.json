@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5175",
-    "build": "rm -rf dist && tsc -p tsconfig.build.json && vite build",
+    "build": "node ../../scripts/clean-path.mjs dist && tsc -p tsconfig.build.json && vite build",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run --passWithNoTests"
   },

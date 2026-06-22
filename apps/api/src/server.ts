@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
 import { createServer, type IncomingMessage, type Server, type ServerResponse } from "node:http";
-import { resolve } from "node:path";
+import { isAbsolute, relative, resolve } from "node:path";
 import {
   BillingEntitlementError,
   ContentSafetyBlockedError,
@@ -1650,7 +1650,8 @@ async function sendLocalAsset(response: ServerResponse, config: ApiConfig, stora
   }
   const assetRoot = resolve(config.dataDir, "assets");
   const assetPath = resolve(assetRoot, decodeURIComponent(storageKey));
-  if (!assetPath.startsWith(`${assetRoot}/`) && assetPath !== assetRoot) {
+  const assetRelativePath = relative(assetRoot, assetPath);
+  if (assetRelativePath.startsWith("..") || isAbsolute(assetRelativePath)) {
     sendJson(response, 400, { error: "Invalid asset path" });
     return;
   }

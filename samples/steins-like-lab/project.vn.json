@@ -1,7 +1,7 @@
 {
   "id": "vn_实验室里的蓝光",
   "title": "实验室里的蓝光",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "viewport": {
     "width": 1280,
     "height": 720,
@@ -356,7 +356,7 @@
   "metadata": {
     "source": "local-heuristic-agent"
   },
-  "createdAt": "2026-06-08T01:00:53.668Z",
-  "updatedAt": "2026-06-08T01:00:53.668Z",
+  "createdAt": "2026-06-08T01:00:48.770Z",
+  "updatedAt": "2026-06-08T01:00:48.770Z",
   "startBeatId": "chapter_1_scene_1_beat_1"
 }
